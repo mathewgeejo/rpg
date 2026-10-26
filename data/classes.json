@@ -1,0 +1,3552 @@
+[
+  {
+    "id": "luck",
+    "name": "Gambler",
+    "tagline": "The house is a state of mind.",
+    "discipline": "circle",
+    "values": [
+      "uncertainty",
+      "ambition"
+    ],
+    "signature": "Loaded Fate",
+    "description": "Roll a visible die: a low roll restores mana; a high roll strikes harder. Six resets the cooldown.",
+    "passive": "House Edge",
+    "passive_description": "Dodging danger builds luck for the next roll.",
+    "prototype": [
+      2,
+      1,
+      2,
+      2,
+      1,
+      3,
+      2,
+      1,
+      2,
+      3,
+      2,
+      0,
+      2,
+      1,
+      1,
+      2,
+      3,
+      1,
+      2,
+      2,
+      1,
+      3,
+      2,
+      3
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 4,
+      "compassion": 7,
+      "ambition": 7,
+      "uncertainty": 16,
+      "identity": 5,
+      "belonging": 6,
+      "sacrifice": 3,
+      "truth": 13,
+      "change": 8
+    },
+    "color": "#dfbd76",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Loaded Fate",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "debt",
+    "name": "Debtweaver",
+    "tagline": "Every gift leaves a thread.",
+    "discipline": "circle",
+    "values": [
+      "duty",
+      "sacrifice"
+    ],
+    "signature": "Borrowed Tomorrow",
+    "description": "Borrow health for power; marked enemies repay the loan when struck.",
+    "passive": "Interest",
+    "passive_description": "Marked foes return health when defeated.",
+    "prototype": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      3,
+      1,
+      2,
+      0,
+      1,
+      0,
+      2,
+      1,
+      0,
+      3,
+      0,
+      2,
+      2,
+      2,
+      0,
+      2,
+      1,
+      0,
+      2
+    ],
+    "profile": {
+      "agency": 1,
+      "duty": 24,
+      "compassion": 8,
+      "ambition": 3,
+      "uncertainty": 0,
+      "identity": 7,
+      "belonging": 8,
+      "sacrifice": 13,
+      "truth": 7,
+      "change": 1
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Borrowed Tomorrow",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "coin",
+    "name": "Coin Saint",
+    "tagline": "Value is what you choose to save.",
+    "discipline": "hybrid",
+    "values": [
+      "compassion",
+      "sacrifice"
+    ],
+    "signature": "Mercy Mint",
+    "description": "Spend ten coins to heal and scatter sanctified coins that stagger nearby foes.",
+    "passive": "Alms",
+    "passive_description": "Collecting a memory restores a little health.",
+    "prototype": [
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      3,
+      0,
+      2,
+      0,
+      3,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      0,
+      3,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 7,
+      "compassion": 27,
+      "ambition": 4,
+      "uncertainty": 8,
+      "identity": 1,
+      "belonging": 4,
+      "sacrifice": 7,
+      "truth": 6,
+      "change": 2
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Mercy Mint",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "fortune",
+    "name": "Fortune Thief",
+    "tagline": "Luck belongs to whoever survives it.",
+    "discipline": "star",
+    "values": [
+      "agency",
+      "uncertainty"
+    ],
+    "signature": "Stolen Tomorrow",
+    "description": "Steal an enemy attack windup, briefly freezing foes and gaining haste.",
+    "passive": "Sleight",
+    "passive_description": "Attacking a staggered foe restores stamina.",
+    "prototype": [
+      1,
+      2,
+      0,
+      2,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      2,
+      1,
+      3,
+      1,
+      0,
+      3,
+      2,
+      2,
+      3,
+      3,
+      0
+    ],
+    "profile": {
+      "agency": 21,
+      "duty": 7,
+      "compassion": 8,
+      "ambition": 2,
+      "uncertainty": 4,
+      "identity": 8,
+      "belonging": 2,
+      "sacrifice": 4,
+      "truth": 10,
+      "change": 6
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Stolen Tomorrow",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "auction",
+    "name": "Auctioneer",
+    "tagline": "Everything has a price. Name yours.",
+    "discipline": "circle",
+    "values": [
+      "ambition",
+      "truth"
+    ],
+    "signature": "Final Bid",
+    "description": "Hold your ground to place a damaging field; each enemy inside increases its final blast.",
+    "passive": "Appraisal",
+    "passive_description": "Reveals enemy health and rewards extra coins.",
+    "prototype": [
+      3,
+      2,
+      1,
+      3,
+      3,
+      0,
+      2,
+      1,
+      3,
+      2,
+      3,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      3,
+      1,
+      3,
+      1,
+      1,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 2,
+      "duty": 7,
+      "compassion": 3,
+      "ambition": 7,
+      "uncertainty": 7,
+      "identity": 2,
+      "belonging": 8,
+      "sacrifice": 5,
+      "truth": 24,
+      "change": 7
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Final Bid",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "memory",
+    "name": "Memory Shepherd",
+    "tagline": "What is forgotten still needs a home.",
+    "discipline": "circle",
+    "values": [
+      "compassion",
+      "identity"
+    ],
+    "signature": "Remembered Blade",
+    "description": "Record your position and attack; a spectral echo repeats the strike a moment later.",
+    "passive": "Keepsake",
+    "passive_description": "Memory fragments increase maximum mana.",
+    "prototype": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      3,
+      1,
+      2,
+      1,
+      0,
+      0,
+      2,
+      1,
+      3,
+      2,
+      2,
+      0,
+      3,
+      2,
+      2,
+      0,
+      2,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 9,
+      "duty": 9,
+      "compassion": 21,
+      "ambition": 0,
+      "uncertainty": 4,
+      "identity": 15,
+      "belonging": 1,
+      "sacrifice": 3,
+      "truth": 1,
+      "change": 9
+    },
+    "color": "#dfbd76",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Remembered Blade",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "name",
+    "name": "Name Thief",
+    "tagline": "A name is a door left unlocked.",
+    "discipline": "circle",
+    "values": [
+      "agency",
+      "identity"
+    ],
+    "signature": "Unname",
+    "description": "Silence and weaken the nearest foe, borrowing its strength for your next attack.",
+    "passive": "Alias",
+    "passive_description": "First strike against each enemy deals extra damage.",
+    "prototype": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      3,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      2,
+      2,
+      3,
+      1,
+      0,
+      0,
+      2,
+      3,
+      3,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 29,
+      "duty": 3,
+      "compassion": 5,
+      "ambition": 2,
+      "uncertainty": 3,
+      "identity": 15,
+      "belonging": 4,
+      "sacrifice": 1,
+      "truth": 7,
+      "change": 3
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Unname",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "echo",
+    "name": "Echo Duelist",
+    "tagline": "No movement ends where you think.",
+    "discipline": "star",
+    "values": [
+      "identity",
+      "change"
+    ],
+    "signature": "Second Answer",
+    "description": "Dash through a target; an echo delivers a second cut along the same line.",
+    "passive": "Refrain",
+    "passive_description": "Consecutive attacks build an echo bonus.",
+    "prototype": [
+      1,
+      0,
+      1,
+      2,
+      2,
+      3,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2,
+      3,
+      3,
+      2,
+      3,
+      1,
+      2,
+      2,
+      1,
+      3,
+      2,
+      1,
+      0
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 5,
+      "compassion": 5,
+      "ambition": 1,
+      "uncertainty": 9,
+      "identity": 17,
+      "belonging": 3,
+      "sacrifice": 5,
+      "truth": 0,
+      "change": 19
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Second Answer",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "mask",
+    "name": "Maskwright",
+    "tagline": "The self is something we rehearse.",
+    "discipline": "hybrid",
+    "values": [
+      "identity",
+      "belonging"
+    ],
+    "signature": "Borrowed Face",
+    "description": "Leave a taunting mask behind and become briefly invisible to enemies.",
+    "passive": "Persona",
+    "passive_description": "Entering combat grants a small shield.",
+    "prototype": [
+      0,
+      3,
+      3,
+      0,
+      1,
+      1,
+      2,
+      3,
+      2,
+      0,
+      1,
+      3,
+      2,
+      3,
+      2,
+      3,
+      1,
+      1,
+      0,
+      3,
+      2,
+      2,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 9,
+      "duty": 0,
+      "compassion": 4,
+      "ambition": 1,
+      "uncertainty": 11,
+      "identity": 14,
+      "belonging": 17,
+      "sacrifice": 7,
+      "truth": 2,
+      "change": 7
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Borrowed Face",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "epitaph",
+    "name": "Epitaph Keeper",
+    "tagline": "An ending deserves a witness.",
+    "discipline": "circle",
+    "values": [
+      "duty",
+      "identity"
+    ],
+    "signature": "Last Words",
+    "description": "Inscribes a grave seal that executes weakened foes and slows the rest.",
+    "passive": "Elegy",
+    "passive_description": "Enemy defeats lower your active cooldown.",
+    "prototype": [
+      2,
+      0,
+      2,
+      1,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      0,
+      1,
+      1,
+      3,
+      3,
+      3,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      3,
+      2
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 23,
+      "compassion": 9,
+      "ambition": 1,
+      "uncertainty": 8,
+      "identity": 12,
+      "belonging": 2,
+      "sacrifice": 5,
+      "truth": 5,
+      "change": 1
+    },
+    "color": "#dfbd76",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Last Words",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "oath",
+    "name": "Oathbreaker",
+    "tagline": "Some promises deserve to die.",
+    "discipline": "star",
+    "values": [
+      "agency",
+      "change"
+    ],
+    "signature": "Break the Vow",
+    "description": "Attacking builds a vow. Break it to discharge a broad, armor-shattering crescent.",
+    "passive": "Unbound",
+    "passive_description": "Your third basic attack builds additional vow.",
+    "prototype": [
+      0,
+      3,
+      3,
+      0,
+      0,
+      1,
+      3,
+      0,
+      3,
+      1,
+      1,
+      1,
+      0,
+      2,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      2,
+      2,
+      1,
+      0
+    ],
+    "profile": {
+      "agency": 20,
+      "duty": 4,
+      "compassion": 9,
+      "ambition": 2,
+      "uncertainty": 1,
+      "identity": 7,
+      "belonging": 11,
+      "sacrifice": 5,
+      "truth": 3,
+      "change": 10
+    },
+    "color": "#80d6c4",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Break the Vow",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "vow",
+    "name": "Vow Knight",
+    "tagline": "Freedom can be a chosen limit.",
+    "discipline": "star",
+    "values": [
+      "duty",
+      "identity"
+    ],
+    "signature": "Standfast",
+    "description": "Root yourself briefly, gain a strong shield, and punish nearby enemies.",
+    "passive": "Resolve",
+    "passive_description": "Standing still steadily restores posture.",
+    "prototype": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      0,
+      3,
+      2,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0,
+      3,
+      3,
+      3,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 27,
+      "compassion": 9,
+      "ambition": 3,
+      "uncertainty": 3,
+      "identity": 9,
+      "belonging": 1,
+      "sacrifice": 6,
+      "truth": 6,
+      "change": 2
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Standfast",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "witness",
+    "name": "Witness",
+    "tagline": "Seeing creates responsibility.",
+    "discipline": "circle",
+    "values": [
+      "truth",
+      "duty"
+    ],
+    "signature": "Testimony",
+    "description": "Mark every visible foe; their next damage is repeated by a spectral witness.",
+    "passive": "Attention",
+    "passive_description": "Marked enemies have longer attack windups.",
+    "prototype": [
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      0,
+      2,
+      3,
+      0,
+      2,
+      1,
+      3,
+      0,
+      3,
+      0,
+      1,
+      0,
+      0,
+      1,
+      3,
+      2
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 16,
+      "compassion": 8,
+      "ambition": 0,
+      "uncertainty": 4,
+      "identity": 0,
+      "belonging": 3,
+      "sacrifice": 5,
+      "truth": 27,
+      "change": 1
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Testimony",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "penance",
+    "name": "Penitent",
+    "tagline": "Pain is a question, not an answer.",
+    "discipline": "hybrid",
+    "values": [
+      "sacrifice",
+      "compassion"
+    ],
+    "signature": "Absolution",
+    "description": "Spend health to unleash a cleansing ring; defeating a foe returns the sacrifice.",
+    "passive": "Penance",
+    "passive_description": "Damage grows as health falls.",
+    "prototype": [
+      3,
+      0,
+      3,
+      2,
+      2,
+      3,
+      1,
+      3,
+      1,
+      2,
+      0,
+      3,
+      2,
+      3,
+      1,
+      0,
+      2,
+      3,
+      3,
+      2,
+      0,
+      2,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 7,
+      "compassion": 19,
+      "ambition": 0,
+      "uncertainty": 5,
+      "identity": 4,
+      "belonging": 8,
+      "sacrifice": 15,
+      "truth": 7,
+      "change": 4
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Absolution",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "banner",
+    "name": "Bannerless",
+    "tagline": "No king can own the horizon.",
+    "discipline": "star",
+    "values": [
+      "agency",
+      "belonging"
+    ],
+    "signature": "No Crown",
+    "description": "Raise a wandering standard that restores stamina and empowers movement attacks.",
+    "passive": "Wanderer",
+    "passive_description": "Moving continuously builds momentum.",
+    "prototype": [
+      2,
+      3,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      2,
+      2,
+      3,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 23,
+      "duty": 7,
+      "compassion": 10,
+      "ambition": 5,
+      "uncertainty": 0,
+      "identity": 9,
+      "belonging": 14,
+      "sacrifice": 2,
+      "truth": 1,
+      "change": 1
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "No Crown",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "clock",
+    "name": "Clock Mourner",
+    "tagline": "Time keeps what we cannot.",
+    "discipline": "circle",
+    "values": [
+      "identity",
+      "sacrifice"
+    ],
+    "signature": "Still Hour",
+    "description": "Create a clock face that slows foes while its hands sweep outward.",
+    "passive": "Patience",
+    "passive_description": "Slow effects last longer.",
+    "prototype": [
+      0,
+      3,
+      0,
+      1,
+      2,
+      3,
+      0,
+      3,
+      2,
+      0,
+      1,
+      3,
+      1,
+      3,
+      2,
+      3,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 11,
+      "compassion": 3,
+      "ambition": 1,
+      "uncertainty": 4,
+      "identity": 21,
+      "belonging": 8,
+      "sacrifice": 9,
+      "truth": 5,
+      "change": 2
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Still Hour",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "smith",
+    "name": "Tomorrow Smith",
+    "tagline": "The future must be made by hand.",
+    "discipline": "star",
+    "values": [
+      "ambition",
+      "change"
+    ],
+    "signature": "Future Forged",
+    "description": "Temper your next three attacks into expanding shockwaves.",
+    "passive": "Temper",
+    "passive_description": "Each third hit restores a little mana.",
+    "prototype": [
+      1,
+      1,
+      1,
+      3,
+      3,
+      2,
+      0,
+      1,
+      3,
+      3,
+      2,
+      3,
+      3,
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      3,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 3,
+      "compassion": 3,
+      "ambition": 15,
+      "uncertainty": 5,
+      "identity": 5,
+      "belonging": 10,
+      "sacrifice": 3,
+      "truth": 10,
+      "change": 14
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Future Forged",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "delay",
+    "name": "Delayblade",
+    "tagline": "The cut arrives when it is needed.",
+    "discipline": "star",
+    "values": [
+      "duty",
+      "uncertainty"
+    ],
+    "signature": "Unpaid Cut",
+    "description": "Slash now; all enemies struck receive a second wound after two seconds.",
+    "passive": "Interval",
+    "passive_description": "Dodging reduces delayed-cut cooldown.",
+    "prototype": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      3,
+      2,
+      0,
+      3,
+      3,
+      1,
+      2,
+      3,
+      3,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 24,
+      "compassion": 11,
+      "ambition": 3,
+      "uncertainty": 6,
+      "identity": 4,
+      "belonging": 3,
+      "sacrifice": 7,
+      "truth": 7,
+      "change": 1
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Unpaid Cut",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "moment",
+    "name": "Moment Thief",
+    "tagline": "A second can hold an entire life.",
+    "discipline": "star",
+    "values": [
+      "agency",
+      "ambition"
+    ],
+    "signature": "Borrow a Second",
+    "description": "Blink toward your aim and steal stamina from enemies near your arrival.",
+    "passive": "Quickening",
+    "passive_description": "Defeating a foe grants brief haste.",
+    "prototype": [
+      3,
+      2,
+      3,
+      0,
+      0,
+      1,
+      3,
+      0,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      1,
+      1,
+      2,
+      3,
+      2,
+      1,
+      3,
+      3,
+      0
+    ],
+    "profile": {
+      "agency": 19,
+      "duty": 7,
+      "compassion": 4,
+      "ambition": 6,
+      "uncertainty": 4,
+      "identity": 4,
+      "belonging": 9,
+      "sacrifice": 9,
+      "truth": 7,
+      "change": 3
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Borrow a Second",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "afterimage",
+    "name": "Afterimage",
+    "tagline": "Absence has a shape.",
+    "discipline": "hybrid",
+    "values": [
+      "identity",
+      "uncertainty"
+    ],
+    "signature": "Absent Self",
+    "description": "Split into three spectral decoys that explode when their short lives end.",
+    "passive": "Blur",
+    "passive_description": "Dodging leaves a brief distracting echo.",
+    "prototype": [
+      0,
+      1,
+      2,
+      3,
+      0,
+      3,
+      0,
+      3,
+      2,
+      0,
+      1,
+      1,
+      2,
+      3,
+      2,
+      2,
+      1,
+      2,
+      2,
+      0,
+      3,
+      2,
+      0,
+      3
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 6,
+      "compassion": 1,
+      "ambition": 3,
+      "uncertainty": 10,
+      "identity": 21,
+      "belonging": 4,
+      "sacrifice": 6,
+      "truth": 5,
+      "change": 8
+    },
+    "color": "#80d6c4",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Absent Self",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "thorn",
+    "name": "Thorn Host",
+    "tagline": "Let the wound grow into something.",
+    "discipline": "hybrid",
+    "values": [
+      "sacrifice",
+      "change"
+    ],
+    "signature": "Bloom from Hurt",
+    "description": "Plant a thorn garden. Stored damage feeds its reach and venom.",
+    "passive": "Cultivation",
+    "passive_description": "Damage taken stores growth for the next garden.",
+    "prototype": [
+      1,
+      3,
+      1,
+      2,
+      3,
+      3,
+      1,
+      0,
+      2,
+      3,
+      0,
+      2,
+      3,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      0,
+      3,
+      2,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 2,
+      "duty": 3,
+      "compassion": 8,
+      "ambition": 1,
+      "uncertainty": 11,
+      "identity": 5,
+      "belonging": 8,
+      "sacrifice": 11,
+      "truth": 3,
+      "change": 20
+    },
+    "color": "#cb9fcf",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Bloom from Hurt",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "bloom",
+    "name": "Bloom Alchemist",
+    "tagline": "Healing is an unruly experiment.",
+    "discipline": "circle",
+    "values": [
+      "compassion",
+      "change"
+    ],
+    "signature": "Verdant Reaction",
+    "description": "A restorative bloom heals you and poisons nearby foes in equal measure.",
+    "passive": "Sap",
+    "passive_description": "Poisoned enemies yield additional healing.",
+    "prototype": [
+      2,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      2,
+      0,
+      2,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 4,
+      "compassion": 29,
+      "ambition": 0,
+      "uncertainty": 2,
+      "identity": 3,
+      "belonging": 5,
+      "sacrifice": 3,
+      "truth": 7,
+      "change": 11
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Verdant Reaction",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "moth",
+    "name": "Mothkeeper",
+    "tagline": "Small lights lead through enormous dark.",
+    "discipline": "circle",
+    "values": [
+      "compassion",
+      "uncertainty"
+    ],
+    "signature": "Lantern Swarm",
+    "description": "Release homing moth lights that seek enemies and restore mana on impact.",
+    "passive": "Nocturne",
+    "passive_description": "Casting at low mana costs less.",
+    "prototype": [
+      2,
+      0,
+      2,
+      2,
+      1,
+      3,
+      1,
+      2,
+      1,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      2,
+      0,
+      3,
+      3,
+      3,
+      0,
+      2,
+      3,
+      0
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 9,
+      "compassion": 27,
+      "ambition": 1,
+      "uncertainty": 7,
+      "identity": 4,
+      "belonging": 6,
+      "sacrifice": 6,
+      "truth": 1,
+      "change": 8
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Lantern Swarm",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "rot",
+    "name": "Rot Gardener",
+    "tagline": "Decay is a form of generosity.",
+    "discipline": "circle",
+    "values": [
+      "change",
+      "compassion"
+    ],
+    "signature": "Patient Orchard",
+    "description": "Seed a spreading rot field; defeated enemies nourish a healing patch.",
+    "passive": "Compost",
+    "passive_description": "Poison defeats restore health.",
+    "prototype": [
+      1,
+      0,
+      0,
+      2,
+      3,
+      3,
+      0,
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      3,
+      0,
+      2,
+      0,
+      3,
+      1,
+      1,
+      0,
+      2,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 2,
+      "compassion": 17,
+      "ambition": 2,
+      "uncertainty": 7,
+      "identity": 6,
+      "belonging": 4,
+      "sacrifice": 2,
+      "truth": 9,
+      "change": 19
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Patient Orchard",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "anatomy",
+    "name": "Wild Anatomist",
+    "tagline": "To understand life is to be changed.",
+    "discipline": "hybrid",
+    "values": [
+      "truth",
+      "change"
+    ],
+    "signature": "Expose the Seam",
+    "description": "Reveal a target weakness; the next five hits shred its defenses.",
+    "passive": "Study",
+    "passive_description": "Repeated hits against one target deal more damage.",
+    "prototype": [
+      2,
+      2,
+      0,
+      2,
+      0,
+      0,
+      3,
+      2,
+      0,
+      2,
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      3,
+      2,
+      1,
+      0,
+      3,
+      0,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 10,
+      "compassion": 5,
+      "ambition": 1,
+      "uncertainty": 6,
+      "identity": 2,
+      "belonging": 5,
+      "sacrifice": 2,
+      "truth": 25,
+      "change": 10
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Expose the Seam",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "door",
+    "name": "Doorwright",
+    "tagline": "Distance is a habit of the world.",
+    "discipline": "circle",
+    "values": [
+      "agency",
+      "change"
+    ],
+    "signature": "Two Places, One Step",
+    "description": "Place linked gates, blink between them, and cut every enemy along their seam.",
+    "passive": "Threshold",
+    "passive_description": "Gate travel restores a little stamina.",
+    "prototype": [
+      0,
+      1,
+      3,
+      0,
+      3,
+      3,
+      3,
+      0,
+      3,
+      2,
+      2,
+      0,
+      2,
+      2,
+      1,
+      3,
+      1,
+      0,
+      1,
+      2,
+      0,
+      2,
+      2,
+      0
+    ],
+    "profile": {
+      "agency": 19,
+      "duty": 4,
+      "compassion": 7,
+      "ambition": 6,
+      "uncertainty": 4,
+      "identity": 8,
+      "belonging": 2,
+      "sacrifice": 3,
+      "truth": 10,
+      "change": 9
+    },
+    "color": "#cb9fcf",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Two Places, One Step",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "lance",
+    "name": "Horizon Lancer",
+    "tagline": "The farthest point is a promise.",
+    "discipline": "star",
+    "values": [
+      "ambition",
+      "duty"
+    ],
+    "signature": "Beyond the Line",
+    "description": "Lunge a great distance, piercing every foe in your path.",
+    "passive": "Reach",
+    "passive_description": "Attacks at the edge of reach deal extra damage.",
+    "prototype": [
+      3,
+      0,
+      2,
+      1,
+      3,
+      2,
+      3,
+      2,
+      3,
+      1,
+      0,
+      1,
+      1,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      3,
+      3,
+      0
+    ],
+    "profile": {
+      "agency": 9,
+      "duty": 17,
+      "compassion": 8,
+      "ambition": 14,
+      "uncertainty": 0,
+      "identity": 8,
+      "belonging": 6,
+      "sacrifice": 5,
+      "truth": 0,
+      "change": 5
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Beyond the Line",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "fold",
+    "name": "Foldwalker",
+    "tagline": "There is always another way through.",
+    "discipline": "hybrid",
+    "values": [
+      "agency",
+      "uncertainty"
+    ],
+    "signature": "Paper World",
+    "description": "Fold space around your position, pulling enemies into a compact knot.",
+    "passive": "Crease",
+    "passive_description": "Pulled foes remain briefly staggered.",
+    "prototype": [
+      1,
+      2,
+      3,
+      0,
+      0,
+      1,
+      2,
+      0,
+      2,
+      3,
+      2,
+      1,
+      0,
+      2,
+      2,
+      2,
+      3,
+      1,
+      0,
+      2,
+      3,
+      3,
+      0,
+      3
+    ],
+    "profile": {
+      "agency": 18,
+      "duty": 1,
+      "compassion": 4,
+      "ambition": 4,
+      "uncertainty": 12,
+      "identity": 7,
+      "belonging": 8,
+      "sacrifice": 2,
+      "truth": 5,
+      "change": 11
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Paper World",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "compass",
+    "name": "Compass Heretic",
+    "tagline": "North is only one opinion.",
+    "discipline": "circle",
+    "values": [
+      "agency",
+      "truth"
+    ],
+    "signature": "False North",
+    "description": "Reverse nearby enemies away from you and mark a new path with damaging needles.",
+    "passive": "Deviation",
+    "passive_description": "Moving against your last attack direction grants haste.",
+    "prototype": [
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      2,
+      0,
+      1,
+      1,
+      2,
+      0,
+      1,
+      3,
+      1,
+      2,
+      0,
+      0,
+      2,
+      0
+    ],
+    "profile": {
+      "agency": 17,
+      "duty": 4,
+      "compassion": 7,
+      "ambition": 1,
+      "uncertainty": 2,
+      "identity": 8,
+      "belonging": 5,
+      "sacrifice": 2,
+      "truth": 20,
+      "change": 6
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "False North",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "gravity",
+    "name": "Gravity Dancer",
+    "tagline": "Fall with intention.",
+    "discipline": "star",
+    "values": [
+      "uncertainty",
+      "change"
+    ],
+    "signature": "Falling Upward",
+    "description": "Lift foes in a graceful spiral before slamming them into the earth.",
+    "passive": "Poise",
+    "passive_description": "Dodges cost less stamina.",
+    "prototype": [
+      1,
+      3,
+      1,
+      2,
+      3,
+      2,
+      2,
+      0,
+      2,
+      3,
+      3,
+      0,
+      3,
+      2,
+      0,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      1,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 3,
+      "compassion": 2,
+      "ambition": 3,
+      "uncertainty": 17,
+      "identity": 3,
+      "belonging": 7,
+      "sacrifice": 7,
+      "truth": 8,
+      "change": 18
+    },
+    "color": "#cb9fcf",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Falling Upward",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "ink",
+    "name": "Ink Summoner",
+    "tagline": "Creation is a kind of confession.",
+    "discipline": "circle",
+    "values": [
+      "identity",
+      "change"
+    ],
+    "signature": "Living Marginalia",
+    "description": "Draw an ink familiar that hunts enemies with splashing strikes.",
+    "passive": "Margins",
+    "passive_description": "Your familiar returns mana with each third hit.",
+    "prototype": [
+      0,
+      2,
+      0,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      0,
+      2,
+      1,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      3
+    ],
+    "profile": {
+      "agency": 7,
+      "duty": 1,
+      "compassion": 2,
+      "ambition": 5,
+      "uncertainty": 7,
+      "identity": 15,
+      "belonging": 3,
+      "sacrifice": 5,
+      "truth": 8,
+      "change": 19
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Living Marginalia",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "silence",
+    "name": "Silence Bard",
+    "tagline": "Listen to what remains unsaid.",
+    "discipline": "circle",
+    "values": [
+      "compassion",
+      "truth"
+    ],
+    "signature": "The Quiet Between",
+    "description": "A soundless wave cancels windups and silences nearby enemies.",
+    "passive": "Rest",
+    "passive_description": "A pause between attacks restores extra mana.",
+    "prototype": [
+      2,
+      2,
+      0,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      0,
+      2,
+      1
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 6,
+      "compassion": 22,
+      "ambition": 2,
+      "uncertainty": 6,
+      "identity": 0,
+      "belonging": 5,
+      "sacrifice": 1,
+      "truth": 22,
+      "change": 5
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "The Quiet Between",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "glass",
+    "name": "Glass Composer",
+    "tagline": "Even breaking can make a song.",
+    "discipline": "hybrid",
+    "values": [
+      "identity",
+      "ambition"
+    ],
+    "signature": "Shatter Sonata",
+    "description": "Arrange resonant glass prisms; strike again to shatter them into damaging shards.",
+    "passive": "Harmony",
+    "passive_description": "Each active prism amplifies your spell damage.",
+    "prototype": [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2,
+      0,
+      3,
+      3,
+      0,
+      1,
+      3,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      3,
+      1,
+      3,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 10,
+      "duty": 3,
+      "compassion": 1,
+      "ambition": 10,
+      "uncertainty": 4,
+      "identity": 18,
+      "belonging": 7,
+      "sacrifice": 6,
+      "truth": 7,
+      "change": 6
+    },
+    "color": "#a7c591",
+    "showcase": true,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Shatter Sonata",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "puppet",
+    "name": "Marionettist",
+    "tagline": "Control has a cost on both ends.",
+    "discipline": "circle",
+    "values": [
+      "ambition",
+      "belonging"
+    ],
+    "signature": "Cut the Strings",
+    "description": "Bind nearby foes together, then pull their shared strings for linked damage.",
+    "passive": "Tension",
+    "passive_description": "Bound enemies move more slowly.",
+    "prototype": [
+      2,
+      1,
+      2,
+      3,
+      3,
+      1,
+      0,
+      1,
+      3,
+      1,
+      2,
+      3,
+      3,
+      0,
+      3,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3,
+      1,
+      1
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 8,
+      "compassion": 5,
+      "ambition": 14,
+      "uncertainty": 1,
+      "identity": 2,
+      "belonging": 23,
+      "sacrifice": 5,
+      "truth": 2,
+      "change": 8
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Cut the Strings",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "dream",
+    "name": "Dream Sculptor",
+    "tagline": "Possibility needs a place to sleep.",
+    "discipline": "circle",
+    "values": [
+      "uncertainty",
+      "identity"
+    ],
+    "signature": "Gentle Impossibility",
+    "description": "Create a dream field that sleeps enemies until struck, amplifying the waking hit.",
+    "passive": "Lucidity",
+    "passive_description": "Waking a sleeper restores mana.",
+    "prototype": [
+      1,
+      3,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1,
+      2,
+      0,
+      1,
+      0,
+      1,
+      3,
+      2,
+      2,
+      0,
+      1,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3
+    ],
+    "profile": {
+      "agency": 2,
+      "duty": 10,
+      "compassion": 4,
+      "ambition": 4,
+      "uncertainty": 13,
+      "identity": 11,
+      "belonging": 10,
+      "sacrifice": 3,
+      "truth": 6,
+      "change": 9
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Gentle Impossibility",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "wound",
+    "name": "Wound Alchemist",
+    "tagline": "Nothing suffered must be wasted.",
+    "discipline": "hybrid",
+    "values": [
+      "sacrifice",
+      "truth"
+    ],
+    "signature": "Red Transmutation",
+    "description": "Convert missing health into a damaging blood ring and temporary protection.",
+    "passive": "Conversion",
+    "passive_description": "Low health increases shield strength.",
+    "prototype": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      1,
+      3,
+      1,
+      3,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      3,
+      2,
+      3,
+      0,
+      2,
+      1,
+      2,
+      1
+    ],
+    "profile": {
+      "agency": 1,
+      "duty": 8,
+      "compassion": 7,
+      "ambition": 4,
+      "uncertainty": 6,
+      "identity": 6,
+      "belonging": 8,
+      "sacrifice": 18,
+      "truth": 12,
+      "change": 2
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Red Transmutation",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "ash",
+    "name": "Ash Pilgrim",
+    "tagline": "What burned can still guide us.",
+    "discipline": "star",
+    "values": [
+      "sacrifice",
+      "identity"
+    ],
+    "signature": "Road of Embers",
+    "description": "Dash and leave a burning pilgrim trail that punishes pursuit.",
+    "passive": "Cinder",
+    "passive_description": "Dodge trails deal lingering damage.",
+    "prototype": [
+      3,
+      1,
+      3,
+      1,
+      2,
+      3,
+      1,
+      3,
+      0,
+      3,
+      1,
+      3,
+      1,
+      0,
+      1,
+      3,
+      2,
+      2,
+      3,
+      3,
+      1,
+      1,
+      0,
+      1
+    ],
+    "profile": {
+      "agency": 2,
+      "duty": 10,
+      "compassion": 5,
+      "ambition": 4,
+      "uncertainty": 5,
+      "identity": 12,
+      "belonging": 8,
+      "sacrifice": 22,
+      "truth": 4,
+      "change": 0
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Road of Embers",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "hunger",
+    "name": "Hunger Monk",
+    "tagline": "Desire can be disciplined, never erased.",
+    "discipline": "star",
+    "values": [
+      "ambition",
+      "sacrifice"
+    ],
+    "signature": "Empty Bowl",
+    "description": "Drain nearby enemies to refill stamina; overflow restores health.",
+    "passive": "Fasting",
+    "passive_description": "At low mana, weapon damage increases.",
+    "prototype": [
+      3,
+      1,
+      3,
+      1,
+      0,
+      2,
+      1,
+      1,
+      3,
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      1,
+      2,
+      0,
+      3,
+      2,
+      1
+    ],
+    "profile": {
+      "agency": 8,
+      "duty": 5,
+      "compassion": 10,
+      "ambition": 13,
+      "uncertainty": 5,
+      "identity": 2,
+      "belonging": 4,
+      "sacrifice": 11,
+      "truth": 10,
+      "change": 4
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Empty Bowl",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "lantern",
+    "name": "Last Lantern",
+    "tagline": "Hope is a task you keep doing.",
+    "discipline": "hybrid",
+    "values": [
+      "compassion",
+      "duty"
+    ],
+    "signature": "Keep the Light",
+    "description": "Kindle a protective lantern that heals and repels enemies in pulses.",
+    "passive": "Vigil",
+    "passive_description": "Surviving a lethal hit once per rest leaves one health.",
+    "prototype": [
+      2,
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      0,
+      0,
+      2,
+      0,
+      2,
+      3,
+      1,
+      0,
+      3,
+      1,
+      3,
+      0,
+      1,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 18,
+      "compassion": 24,
+      "ambition": 3,
+      "uncertainty": 1,
+      "identity": 2,
+      "belonging": 7,
+      "sacrifice": 6,
+      "truth": 3,
+      "change": 4
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Keep the Light",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "burden",
+    "name": "Burden Bearer",
+    "tagline": "Strength can mean carrying another.",
+    "discipline": "star",
+    "values": [
+      "belonging",
+      "sacrifice"
+    ],
+    "signature": "Weight of the World",
+    "description": "Convert stamina to armor, then release a weighted ground slam.",
+    "passive": "Shoulder",
+    "passive_description": "High stamina reduces incoming damage.",
+    "prototype": [
+      3,
+      3,
+      3,
+      3,
+      2,
+      1,
+      0,
+      1,
+      0,
+      3,
+      1,
+      3,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      0,
+      3,
+      2,
+      0,
+      1,
+      1
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 8,
+      "compassion": 4,
+      "ambition": 3,
+      "uncertainty": 3,
+      "identity": 4,
+      "belonging": 26,
+      "sacrifice": 12,
+      "truth": 6,
+      "change": 2
+    },
+    "color": "#a7c591",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Weight of the World",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "paradox",
+    "name": "Paradox Scholar",
+    "tagline": "A contradiction can be a doorway.",
+    "discipline": "circle",
+    "values": [
+      "truth",
+      "uncertainty"
+    ],
+    "signature": "Impossible Proof",
+    "description": "Alternate frost and fire: one cast freezes; the next detonates frozen foes.",
+    "passive": "Contradiction",
+    "passive_description": "Alternating basic attacks and spells increases damage.",
+    "prototype": [
+      2,
+      2,
+      0,
+      3,
+      0,
+      0,
+      2,
+      1,
+      0,
+      2,
+      3,
+      0,
+      2,
+      3,
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      1,
+      0,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 5,
+      "duty": 6,
+      "compassion": 6,
+      "ambition": 0,
+      "uncertainty": 9,
+      "identity": 2,
+      "belonging": 9,
+      "sacrifice": 0,
+      "truth": 34,
+      "change": 1
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Impossible Proof",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "prophet",
+    "name": "False Prophet",
+    "tagline": "Belief changes what survives.",
+    "discipline": "circle",
+    "values": [
+      "ambition",
+      "belonging"
+    ],
+    "signature": "Useful Lie",
+    "description": "Declare yourself invulnerable for a short time; afterward lose the remaining ward.",
+    "passive": "Conviction",
+    "passive_description": "Your first hit after a ward expires deals more damage.",
+    "prototype": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      1,
+      2,
+      3,
+      1,
+      2,
+      3,
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      0,
+      3,
+      2,
+      3,
+      2,
+      3
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 8,
+      "compassion": 5,
+      "ambition": 13,
+      "uncertainty": 4,
+      "identity": 2,
+      "belonging": 21,
+      "sacrifice": 8,
+      "truth": 3,
+      "change": 5
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Useful Lie",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "question",
+    "name": "Questioner",
+    "tagline": "Certainty is where inquiry begins.",
+    "discipline": "circle",
+    "values": [
+      "truth",
+      "agency"
+    ],
+    "signature": "Why Must It Be?",
+    "description": "Strip enemy shields and interrupt attacks with a piercing question.",
+    "passive": "Doubt",
+    "passive_description": "Interrupted enemies take more damage.",
+    "prototype": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      3,
+      0,
+      0,
+      2,
+      3,
+      0,
+      2,
+      2,
+      0,
+      0,
+      3,
+      0,
+      1,
+      0,
+      1,
+      0,
+      3,
+      3
+    ],
+    "profile": {
+      "agency": 16,
+      "duty": 7,
+      "compassion": 5,
+      "ambition": 0,
+      "uncertainty": 6,
+      "identity": 3,
+      "belonging": 4,
+      "sacrifice": 0,
+      "truth": 28,
+      "change": 3
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Why Must It Be?",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "cipher",
+    "name": "Cipher Monk",
+    "tagline": "Meaning hides in the intervals.",
+    "discipline": "hybrid",
+    "values": [
+      "truth",
+      "duty"
+    ],
+    "signature": "Threefold Key",
+    "description": "Set three orbiting runes that strike sequentially and unlock a finishing blast.",
+    "passive": "Pattern",
+    "passive_description": "Every third action has reduced mana cost.",
+    "prototype": [
+      2,
+      2,
+      0,
+      1,
+      0,
+      0,
+      2,
+      3,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1,
+      3,
+      0,
+      3,
+      3,
+      1,
+      0,
+      1,
+      0,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 13,
+      "compassion": 7,
+      "ambition": 0,
+      "uncertainty": 5,
+      "identity": 3,
+      "belonging": 5,
+      "sacrifice": 3,
+      "truth": 30,
+      "change": 2
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Threefold Key",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "null",
+    "name": "Null Cartographer",
+    "tagline": "The blank places belong to everyone.",
+    "discipline": "circle",
+    "values": [
+      "truth",
+      "change"
+    ],
+    "signature": "Uncharted Ground",
+    "description": "Erase hostile projectiles and make a null field where enemies cannot cast.",
+    "passive": "Blank",
+    "passive_description": "Standing inside your null field restores mana.",
+    "prototype": [
+      0,
+      2,
+      3,
+      2,
+      3,
+      1,
+      2,
+      1,
+      0,
+      2,
+      3,
+      0,
+      2,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      0,
+      3,
+      2,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 4,
+      "duty": 4,
+      "compassion": 4,
+      "ambition": 2,
+      "uncertainty": 9,
+      "identity": 2,
+      "belonging": 9,
+      "sacrifice": 1,
+      "truth": 24,
+      "change": 13
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Uncharted Ground",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "thread",
+    "name": "Threadbinder",
+    "tagline": "A bond is made, not found.",
+    "discipline": "circle",
+    "values": [
+      "belonging",
+      "duty"
+    ],
+    "signature": "Shared Fate",
+    "description": "Link foes with silver thread; a fraction of each strike reaches all linked enemies.",
+    "passive": "Kinship",
+    "passive_description": "Each linked enemy strengthens your ward.",
+    "prototype": [
+      2,
+      0,
+      2,
+      1,
+      2,
+      1,
+      3,
+      1,
+      1,
+      1,
+      0,
+      3,
+      3,
+      1,
+      3,
+      0,
+      2,
+      1,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 14,
+      "compassion": 8,
+      "ambition": 2,
+      "uncertainty": 0,
+      "identity": 1,
+      "belonging": 25,
+      "sacrifice": 5,
+      "truth": 8,
+      "change": 3
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Shared Fate",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "pact",
+    "name": "Pactless",
+    "tagline": "Consent is the first magic.",
+    "discipline": "star",
+    "values": [
+      "agency",
+      "truth"
+    ],
+    "signature": "I Refuse",
+    "description": "Break every status effect, gain brief immunity, and strike those who bound you.",
+    "passive": "Sovereignty",
+    "passive_description": "Control effects on you have reduced duration.",
+    "prototype": [
+      0,
+      2,
+      0,
+      1,
+      0,
+      2,
+      3,
+      0,
+      0,
+      2,
+      2,
+      0,
+      0,
+      1,
+      2,
+      3,
+      1,
+      0,
+      1,
+      0,
+      1,
+      3,
+      2,
+      2
+    ],
+    "profile": {
+      "agency": 17,
+      "duty": 8,
+      "compassion": 4,
+      "ambition": 5,
+      "uncertainty": 2,
+      "identity": 8,
+      "belonging": 1,
+      "sacrifice": 1,
+      "truth": 22,
+      "change": 4
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "I Refuse",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "familiar",
+    "name": "Familiar King",
+    "tagline": "A crown is a promise to the small.",
+    "discipline": "circle",
+    "values": [
+      "belonging",
+      "compassion"
+    ],
+    "signature": "Court of Small Things",
+    "description": "Summon three tiny familiars that orbit, intercept, and attack.",
+    "passive": "Court",
+    "passive_description": "Familiars grant a small passive shield.",
+    "prototype": [
+      2,
+      3,
+      3,
+      3,
+      1,
+      1,
+      0,
+      2,
+      1,
+      1,
+      0,
+      3,
+      3,
+      0,
+      3,
+      3,
+      2,
+      1,
+      0,
+      0,
+      2,
+      2,
+      3,
+      1
+    ],
+    "profile": {
+      "agency": 3,
+      "duty": 9,
+      "compassion": 14,
+      "ambition": 3,
+      "uncertainty": 1,
+      "identity": 3,
+      "belonging": 27,
+      "sacrifice": 7,
+      "truth": 2,
+      "change": 3
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Court of Small Things",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "hearth",
+    "name": "Hearth Witch",
+    "tagline": "A home is an action, repeated.",
+    "discipline": "circle",
+    "values": [
+      "belonging",
+      "compassion"
+    ],
+    "signature": "A Place to Return",
+    "description": "Mark a warm hearth. It heals nearby; recasting returns you to it.",
+    "passive": "Welcome",
+    "passive_description": "Resting at lanterns grants extra maximum health.",
+    "prototype": [
+      2,
+      0,
+      3,
+      3,
+      1,
+      3,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1
+    ],
+    "profile": {
+      "agency": 6,
+      "duty": 4,
+      "compassion": 16,
+      "ambition": 1,
+      "uncertainty": 2,
+      "identity": 4,
+      "belonging": 21,
+      "sacrifice": 7,
+      "truth": 8,
+      "change": 3
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "A Place to Return",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  },
+  {
+    "id": "exile",
+    "name": "Exile Sovereign",
+    "tagline": "Belonging can be built beyond borders.",
+    "discipline": "hybrid",
+    "values": [
+      "agency",
+      "belonging"
+    ],
+    "signature": "Kingdom of One",
+    "description": "Claim a circle of land: gain power inside it and blast foes across its boundary.",
+    "passive": "Sovereign",
+    "passive_description": "Fighting far from the town increases your damage.",
+    "prototype": [
+      2,
+      2,
+      3,
+      3,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      3,
+      0,
+      0
+    ],
+    "profile": {
+      "agency": 15,
+      "duty": 3,
+      "compassion": 5,
+      "ambition": 5,
+      "uncertainty": 1,
+      "identity": 9,
+      "belonging": 20,
+      "sacrifice": 3,
+      "truth": 7,
+      "change": 4
+    },
+    "color": "#91b9e1",
+    "showcase": false,
+    "progression": [
+      {
+        "rank": 1,
+        "name": "Kingdom of One",
+        "bonus": "Unlock your signature and passive."
+      },
+      {
+        "rank": 2,
+        "name": "Resonance",
+        "bonus": "Signature power +20%; unlock a seeded specialization."
+      },
+      {
+        "rank": 3,
+        "name": "Ascendance",
+        "bonus": "Signature power +40%; reduce signature cooldown by 15%."
+      }
+    ]
+  }
+]

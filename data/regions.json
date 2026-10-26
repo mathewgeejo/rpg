@@ -1,0 +1,58 @@
+[
+  {
+    "id": "vale",
+    "name": "Lantern Vale",
+    "theme": "Memory, belonging, and the cost of shelter",
+    "seal": "The Remembering Willow",
+    "color": "#71c4aa"
+  },
+  {
+    "id": "coast",
+    "name": "Glassstep Coast",
+    "theme": "Trade, consent, and the price of safe passage",
+    "seal": "The Tidal Mirror",
+    "color": "#8acbd7"
+  },
+  {
+    "id": "orchard",
+    "name": "Rainbound Orchard",
+    "theme": "Grief, renewal, and the ownership of healing",
+    "seal": "The Patient Seed",
+    "color": "#a7be80"
+  },
+  {
+    "id": "choir",
+    "name": "Ashen Choir",
+    "theme": "Faith, testimony, and useful lies",
+    "seal": "The Last Bell",
+    "color": "#dba286"
+  },
+  {
+    "id": "peaks",
+    "name": "Inverted Peaks",
+    "theme": "Ambition, hierarchy, and chosen limits",
+    "seal": "The Falling Star",
+    "color": "#b4adcf"
+  },
+  {
+    "id": "library",
+    "name": "Salt Library",
+    "theme": "Truth, privacy, and inherited blame",
+    "seal": "The Drowned Index",
+    "color": "#8bbcc7"
+  },
+  {
+    "id": "crown",
+    "name": "Hollow Crown",
+    "theme": "Power, legitimacy, and shared responsibility",
+    "seal": "The Empty Throne",
+    "color": "#cbb07b"
+  },
+  {
+    "id": "meridian",
+    "name": "Dawnless Meridian",
+    "theme": "Identity, freedom, and an unwritten future",
+    "seal": "The First Absence",
+    "color": "#b597bf"
+  }
+]

@@ -1,0 +1,854 @@
+[
+  {
+    "id": "q01",
+    "title": "The bridge remembers",
+    "text": "A bridge will save a village, but it can be built only from the memories of its oldest resident. She offers them willingly. What do you ask first?",
+    "choices": [
+      {
+        "text": "Whether her consent can survive losing who she is.",
+        "weights": {
+          "identity": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Whether another bridge can be made, even at greater risk.",
+        "weights": {
+          "change": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Whether the village will care for her afterward.",
+        "weights": {
+          "compassion": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Whether I can give my memories in her place.",
+        "weights": {
+          "sacrifice": 2,
+          "duty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "title": "A fair coin",
+    "text": "A stranger offers a coin that can save one unknown life or grant you the strength to save many later. The future cannot be verified.",
+    "choices": [
+      {
+        "text": "Save the life that exists in front of me.",
+        "weights": {
+          "compassion": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Take the strength and accept responsibility for the wager.",
+        "weights": {
+          "ambition": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Investigate who made the rules of this bargain.",
+        "weights": {
+          "truth": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Let the stranger choose; I will share the consequence.",
+        "weights": {
+          "belonging": 2,
+          "sacrifice": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "title": "The borrowed name",
+    "text": "A child has stolen the name of a dead hero. The name gives her courage and brings comfort to a grieving town.",
+    "choices": [
+      {
+        "text": "Tell her the truth in private, then help her find her own name.",
+        "weights": {
+          "truth": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Let the name belong to whoever needs it.",
+        "weights": {
+          "change": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Ask what she will do when the town needs the hero again.",
+        "weights": {
+          "duty": 2,
+          "ambition": 1
+        }
+      },
+      {
+        "text": "Stand beside her and share the lie openly.",
+        "weights": {
+          "belonging": 2,
+          "sacrifice": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "title": "A vow made young",
+    "text": "You promised never to draw a weapon. Keeping the vow now leaves another person defenseless.",
+    "choices": [
+      {
+        "text": "Break the vow and remember why I broke it.",
+        "weights": {
+          "agency": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Keep it and put my own body in the way.",
+        "weights": {
+          "duty": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Find a way to change what a weapon means.",
+        "weights": {
+          "change": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Ask the threatened person what help they want.",
+        "weights": {
+          "belonging": 2,
+          "truth": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "title": "The perfect map",
+    "text": "An accurate map would reveal a hidden sanctuary to refugees and to the army pursuing them.",
+    "choices": [
+      {
+        "text": "Make the map, then entrust it to the refugees.",
+        "weights": {
+          "agency": 2,
+          "truth": 1
+        }
+      },
+      {
+        "text": "Leave the sanctuary blank and accept an imperfect truth.",
+        "weights": {
+          "compassion": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Draw a false route and take responsibility for the deception.",
+        "weights": {
+          "duty": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Move the sanctuary so no map can own it.",
+        "weights": {
+          "change": 2,
+          "ambition": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "title": "The empty throne",
+    "text": "A city asks you to rule for one year. You can improve its laws, but leaving will be harder than arriving.",
+    "choices": [
+      {
+        "text": "Accept, with a public agreement that I cannot extend my rule.",
+        "weights": {
+          "duty": 2,
+          "truth": 1
+        }
+      },
+      {
+        "text": "Help its people form a council instead.",
+        "weights": {
+          "belonging": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Accept; good intentions need real power to matter.",
+        "weights": {
+          "ambition": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Decline, but return each season to be held accountable.",
+        "weights": {
+          "identity": 2,
+          "sacrifice": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "title": "The last seed",
+    "text": "A seed can restore a dead forest, or become medicine for someone you love.",
+    "choices": [
+      {
+        "text": "Choose the person; love makes a claim I will answer.",
+        "weights": {
+          "belonging": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Choose the forest, and bear the grief without calling it justice.",
+        "weights": {
+          "sacrifice": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Delay the choice to search for a third use.",
+        "weights": {
+          "uncertainty": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Give the choice to the person who needs the medicine.",
+        "weights": {
+          "agency": 2,
+          "duty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "title": "A useful monster",
+    "text": "A creature protects the town only because it is chained. Releasing it may undo years of safety.",
+    "choices": [
+      {
+        "text": "Release it and help the town learn a different safety.",
+        "weights": {
+          "agency": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Ask whether it would protect the town by agreement.",
+        "weights": {
+          "belonging": 2,
+          "truth": 1
+        }
+      },
+      {
+        "text": "Maintain the chain until an alternative is ready.",
+        "weights": {
+          "duty": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Take its place while the town prepares.",
+        "weights": {
+          "sacrifice": 2,
+          "identity": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "title": "An honest failure",
+    "text": "Your failed experiment proves a respected theory wrong. Publishing it will end your teacher's career.",
+    "choices": [
+      {
+        "text": "Publish it and credit the teacher for making inquiry possible.",
+        "weights": {
+          "truth": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Speak with the teacher before anyone else.",
+        "weights": {
+          "compassion": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Repeat the experiment until uncertainty is small enough.",
+        "weights": {
+          "uncertainty": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Build a better theory before bringing the old one down.",
+        "weights": {
+          "ambition": 2,
+          "change": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "title": "The road home",
+    "text": "You can return to the life you remember, but only if you forget everything learned on the road.",
+    "choices": [
+      {
+        "text": "Continue; the road has become part of who I am.",
+        "weights": {
+          "identity": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Return; being needed matters more than being remarkable.",
+        "weights": {
+          "belonging": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Find who built the gate and question the condition.",
+        "weights": {
+          "truth": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Let chance choose, then commit to the life it leaves.",
+        "weights": {
+          "uncertainty": 2,
+          "sacrifice": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "title": "The unearned gift",
+    "text": "You inherit power from someone whose actions harmed strangers. The power itself could help them.",
+    "choices": [
+      {
+        "text": "Use it, but let those harmed set the terms.",
+        "weights": {
+          "compassion": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Refuse it; some inheritances repeat the injury.",
+        "weights": {
+          "identity": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Transform it into something that cannot serve its old purpose.",
+        "weights": {
+          "change": 2,
+          "ambition": 1
+        }
+      },
+      {
+        "text": "Learn its full history before deciding what it is.",
+        "weights": {
+          "truth": 2,
+          "uncertainty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "title": "The witness and the crowd",
+    "text": "You alone remember an event differently from everyone else. Both versions explain the evidence.",
+    "choices": [
+      {
+        "text": "Keep a record of both versions.",
+        "weights": {
+          "truth": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Trust my memory while remaining open to correction.",
+        "weights": {
+          "identity": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Ask which version helps people heal, without calling it proven.",
+        "weights": {
+          "compassion": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Stay with the people who share the cost of remembering.",
+        "weights": {
+          "belonging": 2,
+          "sacrifice": 1
+        }
+      }
+    ],
+    "reflection": {
+      "question": 0,
+      "text": "Earlier, you considered whose memories a bridge could claim. Now consider who may claim the truth."
+    }
+  },
+  {
+    "id": "q13",
+    "title": "A debt without a creditor",
+    "text": "Someone who saved your life asks you to repay the debt to a stranger they dislike.",
+    "choices": [
+      {
+        "text": "Help the stranger because need is enough.",
+        "weights": {
+          "compassion": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Honor the request; promises outlive our preferences.",
+        "weights": {
+          "duty": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Ask what harm repayment might quietly continue.",
+        "weights": {
+          "truth": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Turn the debt into a community fund anyone can draw from.",
+        "weights": {
+          "belonging": 2,
+          "change": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "title": "A door with no return",
+    "text": "Beyond a door is knowledge that may solve the world's oldest problem. Nobody who enters has returned.",
+    "choices": [
+      {
+        "text": "Enter, leaving my work for someone who may follow.",
+        "weights": {
+          "ambition": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Study the door with others until we can return together.",
+        "weights": {
+          "truth": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Protect the right of others to decide whether to enter.",
+        "weights": {
+          "agency": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Leave the door open and build a life beside the mystery.",
+        "weights": {
+          "uncertainty": 2,
+          "identity": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q15",
+    "title": "The gentle lie",
+    "text": "A dying traveler asks whether their estranged family forgave them. You do not know.",
+    "choices": [
+      {
+        "text": "Say I do not know, and stay with them.",
+        "weights": {
+          "truth": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Tell them the forgiveness they need to hear.",
+        "weights": {
+          "compassion": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Ask what forgiving themselves would mean.",
+        "weights": {
+          "identity": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Offer to carry their final words to the family.",
+        "weights": {
+          "duty": 2,
+          "belonging": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q16",
+    "title": "The rival's triumph",
+    "text": "A rival discovers what you have pursued for years. They invite you to help finish the work.",
+    "choices": [
+      {
+        "text": "Join; the discovery matters more than its owner.",
+        "weights": {
+          "truth": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Join, and ask for responsibility equal to my contribution.",
+        "weights": {
+          "ambition": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Follow a new question their discovery makes possible.",
+        "weights": {
+          "change": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Admit my envy before deciding whether I can help honestly.",
+        "weights": {
+          "identity": 2,
+          "agency": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q17",
+    "title": "The garden of grief",
+    "text": "A garden blooms only when its keeper remembers a loss. Healing their grief would make it wither.",
+    "choices": [
+      {
+        "text": "Help the keeper heal, and mourn the garden too.",
+        "weights": {
+          "compassion": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Ask whether tending the garden is their chosen way of living.",
+        "weights": {
+          "agency": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Find a way to share the remembering.",
+        "weights": {
+          "belonging": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Study whether the garden needs grief or merely attention.",
+        "weights": {
+          "truth": 2,
+          "uncertainty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "title": "A law for the storm",
+    "text": "Breaking a city's evacuation order lets you reach people the official plan has overlooked.",
+    "choices": [
+      {
+        "text": "Break it and account for every risk I create.",
+        "weights": {
+          "agency": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "Work within the plan to redirect help quickly.",
+        "weights": {
+          "belonging": 2,
+          "ambition": 1
+        }
+      },
+      {
+        "text": "Go alone so others do not bear my decision.",
+        "weights": {
+          "sacrifice": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Ask those overlooked which route they trust.",
+        "weights": {
+          "compassion": 2,
+          "truth": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q19",
+    "title": "A second self",
+    "text": "A perfect copy of you awakens with your memories and a different desire for the future.",
+    "choices": [
+      {
+        "text": "Treat them as kin, with a life of their own.",
+        "weights": {
+          "belonging": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Compare our differences to understand how selves are made.",
+        "weights": {
+          "truth": 2,
+          "change": 1
+        }
+      },
+      {
+        "text": "Share our obligations, but not ownership of our choices.",
+        "weights": {
+          "duty": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "Let them take my place while I begin again.",
+        "weights": {
+          "sacrifice": 2,
+          "uncertainty": 1
+        }
+      }
+    ],
+    "reflection": {
+      "question": 2,
+      "text": "Earlier, a borrowed name gave a child courage. Here, the borrowed life is your own."
+    }
+  },
+  {
+    "id": "q20",
+    "title": "The bargain of peace",
+    "text": "Two enemies will stop fighting if their children are never told what began the conflict.",
+    "choices": [
+      {
+        "text": "Accept a truce, but preserve a record for a later generation.",
+        "weights": {
+          "duty": 2,
+          "truth": 1
+        }
+      },
+      {
+        "text": "Refuse inherited silence and work for a harder peace.",
+        "weights": {
+          "change": 2,
+          "ambition": 1
+        }
+      },
+      {
+        "text": "Ask the children what they want to inherit.",
+        "weights": {
+          "agency": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Build shared rituals before asking for shared history.",
+        "weights": {
+          "belonging": 2,
+          "uncertainty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q21",
+    "title": "What the fire leaves",
+    "text": "You have time to save one thing from a burning archive: a cure, a history, a letter, or an unfinished map.",
+    "choices": [
+      {
+        "text": "The cure: knowledge should answer suffering.",
+        "weights": {
+          "compassion": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "The history: a future needs an honest past.",
+        "weights": {
+          "truth": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "The letter: one irreplaceable bond is enough.",
+        "weights": {
+          "belonging": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "The map: leave the future room to become something else.",
+        "weights": {
+          "change": 2,
+          "uncertainty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q22",
+    "title": "A power that listens",
+    "text": "Your magic grows stronger when people believe you cannot fail. Telling them your doubts weakens you.",
+    "choices": [
+      {
+        "text": "Tell them; trust must leave room for weakness.",
+        "weights": {
+          "truth": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Carry the doubt privately while the danger lasts.",
+        "weights": {
+          "duty": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "Teach them to believe in recovery instead of perfection.",
+        "weights": {
+          "change": 2,
+          "compassion": 1
+        }
+      },
+      {
+        "text": "Use the power, but set a goal after which I relinquish it.",
+        "weights": {
+          "ambition": 2,
+          "agency": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q23",
+    "title": "The unfinished answer",
+    "text": "A teacher says every life must serve one purpose. You have found several that conflict.",
+    "choices": [
+      {
+        "text": "Choose one for now, without calling the others mistakes.",
+        "weights": {
+          "identity": 2,
+          "agency": 1
+        }
+      },
+      {
+        "text": "Build a life in which several purposes can take turns.",
+        "weights": {
+          "change": 2,
+          "belonging": 1
+        }
+      },
+      {
+        "text": "Ask why a life must justify itself through purpose.",
+        "weights": {
+          "truth": 2,
+          "uncertainty": 1
+        }
+      },
+      {
+        "text": "Choose the purpose that helps the people relying on me.",
+        "weights": {
+          "compassion": 2,
+          "duty": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "q24",
+    "title": "The blank page",
+    "text": "The Atlas offers to write the ending you deserve. It asks you to define deserve.",
+    "choices": [
+      {
+        "text": "An ending I chose while allowing others their choices.",
+        "weights": {
+          "agency": 2,
+          "identity": 1
+        }
+      },
+      {
+        "text": "An ending where fewer people must suffer for our safety.",
+        "weights": {
+          "compassion": 2,
+          "sacrifice": 1
+        }
+      },
+      {
+        "text": "An ending that tells the truth, even about my failures.",
+        "weights": {
+          "truth": 2,
+          "duty": 1
+        }
+      },
+      {
+        "text": "No ending yet. Leave something unwritten.",
+        "weights": {
+          "uncertainty": 2,
+          "change": 1
+        }
+      }
+    ],
+    "reflection": {
+      "question": 9,
+      "text": "You have already considered what returning home might cost. What should an ending offer instead?"
+    }
+  }
+]
