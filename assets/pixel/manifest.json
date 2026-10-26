@@ -1,0 +1,495 @@
+{
+  "policy": "No AI-generated artwork. Reviewed source archives; retain original credits.",
+  "images": [
+    {
+      "path": "assets/pixel/base/barrel.png",
+      "sha256": "c639301d7eb0b947c95b8a74729b456ba325de3c509df512d02d58118322ba2d",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/bat.png",
+      "sha256": "0da4eb935b49dbe41e9fb27b69da1451973f87242b3211944bb4ec95f8917ed8",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/bee.png",
+      "sha256": "ad5f45d2bcd23b8d5738a165a168c7f7c0c34550709e0ab0fe266926a9cc73f6",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/big_worm.png",
+      "sha256": "91f2ae2ccd53f556a98ed8d1f7b40e57e15920a9e2c7c0352622fc7fe72d08cd",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/brackish.png",
+      "sha256": "bd9a57ea5b3a22bb9ff518ab5995e7b046941232f5edfec86b75939be543de1b",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/bridges.png",
+      "sha256": "18b92672f26cc46f036ac3699416ffc3b19dc8a827756811c94384573b2c53e6",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/buckets.png",
+      "sha256": "73c54b1d59b6bc009aa113ef52da9cf09bfa6e12b1370aefc827be0a79371cb5",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/cabinets.png",
+      "sha256": "b03bd17e8b1ef5635e6b255f098697457a4016f253b2cb4424eb817fcd0ab4bc",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/castle_lightsources.png",
+      "sha256": "08d8be5c1391c075106b142b73f8fb1aca23ae550c212443112843a762ad3436",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/castle_outside.png",
+      "sha256": "54f9810f84879fa836b0a449b6c5d77b5d9fe60f42d4368a3637a3c2b2d4ea2b",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/castlefloors.png",
+      "sha256": "5244b8ee8ff88d5ce553a0cf332b8bdcbfe8394e16cfff16b93fa44357644415",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/castlefloors_outside.png",
+      "sha256": "90f6245f434641c62bdce222aa9d63ab255f81576bd55e271c854eaf92e7ff4c",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/castlewalls.png",
+      "sha256": "b832d6815ff9a860055196243195f6c12eaac54ec3545c7d6cb0c2593f8afb3d",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/cement.png",
+      "sha256": "b1a12e8f9480e524210c48d3398edc1147d05eb2b29804b44022f4336665c8c7",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/cementstair.png",
+      "sha256": "d4c81968a65559ea0cc59dc9b671261bcab9fce20b90f6812878e79b8f6c325b",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/chests.png",
+      "sha256": "805d6b28783c5776ea6d01c82ef7febeb32ae5781a143ea1821ef605da5d9f92",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/country.png",
+      "sha256": "dab690b20c23d01d41ec2030e8bf50d6546347a1baa6f7e0767ff0e7232169e2",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/cup.png",
+      "sha256": "f1f57c454283928d953e35bd98521a0e8d9c2c161e1e411810cf78b8834b8bf9",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/dirt.png",
+      "sha256": "115ffc435f5ce95a5462c08708a158bac014ac4f6fd631af44e335b77a0a264b",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/dirt2.png",
+      "sha256": "cc0d99cab8fc3d31912c9784394c1abbd016b0745dd9d8b682bbf4a2e2ec398f",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/dungeon.png",
+      "sha256": "58e59996e37244f5dff6a98fd9da4e00fa55b4e4858291c06b918af9853eb3fe",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/eyeball.png",
+      "sha256": "84564168d8c49b3d3508a3fa5cb576b434dad99c54f46516f984a97f7e8485d1",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/female_hurt.png",
+      "sha256": "d3085b6864ec766a14bb5d1f649cbc84b0d53bb1cfe4e3a8306da4ff093863df",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/female_slash.png",
+      "sha256": "66df3fee78b7b2fb5c995581cab2ae731766d9b035b8b5b6376226ba0b959abf",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/female_spellcast.png",
+      "sha256": "7751de218673c47fc5d06dd210e2d552f3b32c689704376f1b331e11ff5e7ea5",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/female_walkcycle.png",
+      "sha256": "05d3e14f5284a0433b8a93435f4d14b409d7c2a4fb47d68960c4a6ed51321305",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/ghost.png",
+      "sha256": "2e241a28d4230d4496b764acf2903f9508449f6804dbdc0c27fa9717559b55c7",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/grass.png",
+      "sha256": "9fad54558dcb0aa91859869c603e76fe362ae320e0c4b1e873266566cb0d73a0",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/grassalt.png",
+      "sha256": "01391d65597978216c1c3e5279ea86c92ca62b21f3e2d85b04eacb5cf78b8d13",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/hairfemale.png",
+      "sha256": "df3641af16d2e1c44d39b6546b05211b5e57c1957094fb2b79b7702394ff12bd",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/hairmale.png",
+      "sha256": "561eeccabc7dad91ee2a74aaad5628606369663be53554e830abd9fe66447b04",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/hole.png",
+      "sha256": "5a8857dac2b837ff6bbe3836d1ef81e1697628b3fdfb90613edfee2b6802aceb",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/holek.png",
+      "sha256": "11af25e9a07e9084409f3a0f24200639bf20ef065c0b9396037eec3583352573",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/holemid.png",
+      "sha256": "cd996238a133aa1dc9c3c3326e60cb617af88b2f158a61c7841be0c96dc70c77",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/house.png",
+      "sha256": "b596a455cbec21918695993a1ed2df099c2770ff4b676a74b07daa65032ca259",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/inside.png",
+      "sha256": "885e848e25be9da8e85f01103172d3c554ca7de1c41cdc65e43a1a43dad9be97",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/kitchen.png",
+      "sha256": "97c364c55bf4f6191a025613c84dbd7e9d0997dc8f42f8001eb0194adcd18705",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/lava.png",
+      "sha256": "b941d429405d67c6ac40838118f350ca908079f3aa469d78a8cdcd064377da13",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/lavarock.png",
+      "sha256": "a70a8c1080ca3666091e42c8de6173919b697afc161a119a82a423117d2def7d",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_hurt.png",
+      "sha256": "e1c836c6bd2977aa0c1b46507c21aa06e14e8b4115a920f4d21df104879f15b3",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_hurt_pants.png",
+      "sha256": "8aca0886059a28e7b04d2c031f038d34c705af88deeacd81358a3f7d8d0c83a2",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_pants.png",
+      "sha256": "88c0be00a611d41f88e50dc7ff866bed80fc70a4128f72342cc507f0ee4e8ec1",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_slash.png",
+      "sha256": "a191beb7cf21dfb2ccaaba0865d9095196b98729cb4c07ddac2fd81f30138624",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_slash_pants.png",
+      "sha256": "86c242e53611511a6b18ec0f791db345d2265c158e7923fb922f46b31cbe0a6e",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_spellcast.png",
+      "sha256": "820c6524b691d5426e7f0ecacfbf304e2451e52cf1b34a3656f4a6cc8ac28927",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_spellcast_pants.png",
+      "sha256": "7abe0349716b4064d82226f8067b80218db1b03aafd1f4d0ee4005356001045e",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/male_walkcycle.png",
+      "sha256": "81f975f01d9c41c82e1e983d98be825d8b91996498d4936b270a83daec28203f",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/man_eater_flower.png",
+      "sha256": "56bcabbccedff8b43e38e543dd20ec2aadb8be6eabae9bd1e3c3dafe92bda945",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/mountains.png",
+      "sha256": "08a7d605762d549dd18f9cb948accdaf4521c32299c0dbfe38299fe59ecb7959",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/princess.png",
+      "sha256": "79e9175cf0dc6a47016cd4466e1a490398a0a0516b6e1e02710f7eb443aa88ae",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/pumpking.png",
+      "sha256": "4b11182392d4784001f4d7095455cba0984860d574b995886455ce54c17730f5",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/rock.png",
+      "sha256": "07e1db23fa156cb664d0ff4de8499bdd4527f035a828e4d7b050227743399576",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/shadow.png",
+      "sha256": "78439716aa1873a6b317dee08d740ddf69e336095668e16e9738e2249fbc175a",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/signs.png",
+      "sha256": "2cce6eeb0e19b0842afdbaf754b066613ba157b422662037d2efc92b0b598143",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/slime.png",
+      "sha256": "49a1775bd8c0a89cf054a69207c2edd771cda9164d1d452fa3baaa57414eae1a",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/small_worm.png",
+      "sha256": "2dd9ac1fe8aa6d2bc0a6b14f8693c1dc44ea26befcbd03dd3a84fdaec51c3c3e",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/snake.png",
+      "sha256": "3930c3e76025e34865662cf1c4fd5b30a4a84bed312d68bce5357a70d3c80da2",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/soldier.png",
+      "sha256": "1eb2cf4f4bc2dfd5a6d8f8cb342318e307f1a14ef2a95f785e00eda3050b39ff",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/soldier_altcolor.png",
+      "sha256": "8e656739b2bc81bd0ecc9b0d2798bb4449a3cb5966b0ccb1504b06d59c6bb0c2",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/stairs.png",
+      "sha256": "6a3c889cd88fc3fd37328dbbb269369f09d88043f8b9b22b99480735a1d80396",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/treetop.png",
+      "sha256": "37f3d9c4beb61b05fad39bd5efdecc03b5d67504307936397bb1645824bbf475",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/trunk.png",
+      "sha256": "8b03c5efa6950b5be6c6db989e22bee024c0ee232bc665768db3c35e68a28651",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/victoria.png",
+      "sha256": "9606fa7bb7d53567f75104e968f4e9f6d5de45bac04260016ed22dd63f5e7f8e",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/water.png",
+      "sha256": "6107522405d8c27b9bab7278f5dc14cd7cc0445592f5967d748cb81ede4b0d47",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/waterfall.png",
+      "sha256": "a41ef99c08449d44331a603df95f90365200768a6f6717124e9d0f2e4065ffed",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/base/watergrass.png",
+      "sha256": "bbbb43d2fc0209c881f4255aa82ca4805f65d97f242852f0132cb96f78e3ed5e",
+      "source": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/forest/forest_tiles.png",
+      "sha256": "c2f9e2b0b675a38127e2581d97880d4bd1fe15e0152357365bd9d527e2575991",
+      "source": "https://opengameart.org/content/lpc-forest-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/forest/preview.png",
+      "sha256": "f51c050378d8540a0ae9b5a6eada077b84602a1f671530001a456ac4ea0707cf",
+      "source": "https://opengameart.org/content/lpc-forest-tiles",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/decorations/decorations-medieval.png",
+      "sha256": "b3702f06722a8d7fa60f34afb340c5d392a2974a3746a8d3dcb1494d6bf90f55",
+      "source": "https://opengameart.org/content/lpc-medieval-village-decorations",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/decorations/fence_medieval.png",
+      "sha256": "2c398d3b47c7d361c0a0778e631e8fe4b8fa5e4c248c8ec8ac1b8c300b968b0c",
+      "source": "https://opengameart.org/content/lpc-medieval-village-decorations",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-authored LPC pixel art"
+    }
+  ]
+}

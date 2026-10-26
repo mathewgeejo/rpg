@@ -39,7 +39,9 @@ func load_state() -> Dictionary:
 func _read(source: String) -> Dictionary:
 	if not FileAccess.file_exists(source):
 		return {}
-	var value = JSON.parse_string(FileAccess.get_file_as_string(source))
+	var parser = JSON.new()
+	if parser.parse(FileAccess.get_file_as_string(source)) != OK: return {}
+	var value = parser.data
 	if not value is Dictionary:
 		return {}
 	if int(value.get("save_version",0)) != VERSION or int(value.get("generator_version",0)) != 1:

@@ -17,8 +17,6 @@ var banner: Control
 var banner_time = 0.0
 var serif: Font = preload("res://assets/fonts/display.tres")
 var sans: Font = preload("res://assets/fonts/body.tres")
-var art: Texture2D = preload("res://assets/art/lantern_vale.png")
-var hero: Texture2D = preload("res://assets/art/wanderer.png")
 var waiting_binding = ""
 var question_index = 0
 var selected_class = "luck"
@@ -142,14 +140,11 @@ func title_screen() -> void:
 	modal = Control.new()
 	modal.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.add_child(modal)
-	title_bg = TextureRect.new()
-	title_bg.texture = art
-	title_bg.position = Vector2(-20,-30)
-	title_bg.size = Vector2(1500,1000)
-	title_bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	title_bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	title_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	modal.add_child(title_bg)
+	game.world_view.preview = true
+	game.room_id = 0
+	game.zone = game.model.room(0)
+	game.world_view.prepare_ground()
+	game.world_view.camera = Vector2(1080,850)
 	var veil = ColorRect.new()
 	veil.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var shader = Shader.new()
@@ -258,12 +253,14 @@ func progress(parent: Node, pos: Vector2, dimensions: Vector2, color: Color) -> 
 	var background = style(Color("28413f"))
 	var fill = style(color)
 	for box in [background,fill]:
+		box.set_corner_radius_all(0)
 		box.content_margin_top = 0
 		box.content_margin_bottom = 0
 		box.content_margin_left = 0
 		box.content_margin_right = 0
 	bar.add_theme_stylebox_override("background",background)
 	bar.add_theme_stylebox_override("fill",fill)
+	bar.size = dimensions
 	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(bar)
 	return bar
@@ -408,6 +405,23 @@ func journal_screen() -> void:
 		label(surface,entries[i][0],Vector2(42,498+i*85),Vector2(850,35),25,CREAM,true)
 		label(surface,entries[i][1],Vector2(42,536+i*85),Vector2(940,32),15,MUTED)
 		label(surface,entries[i][2],Vector2(1060,505+i*85),Vector2(150,30),12,GOLD)
+	button(surface,"Wayfarer's commissions  →",Vector2(879,732),Vector2(330,38),func(): commission_screen())
+
+func commission_screen() -> void:
+	var surface = modal_base("WORK FOR THE ROAD AHEAD", "Wayfarer's commissions", "Local requests change with the world seed. Accept a commission, explore, and return here to collect its reward.")
+	var entries: Array = game.model.commissions()
+	for i in entries.size():
+		var entry: Dictionary = entries[i]
+		var y = 215+i*172
+		label(surface,entry.name,Vector2(42,y),Vector2(860,42),28,CREAM,true)
+		label(surface,entry.story,Vector2(42,y+49),Vector2(850,63),16,MUTED)
+		var status: String = game.contracts.get(entry.id,"")
+		var caption = "Accept commission"
+		if status == "active": caption = "Claim reward" if game.commission_progress(entry) >= entry.target else "%d / %d · In progress" % [game.commission_progress(entry),entry.target]
+		if status == "complete": caption = "Complete"
+		button(surface,caption,Vector2(947,y+29),Vector2(266,46),func(): game.commission_action(entry),status == "").disabled = status == "complete" or (status == "active" and game.commission_progress(entry) < entry.target)
+		label(surface,"%d COINS  ·  35 XP" % entry.reward,Vector2(960,y+92),Vector2(250,25),11,GOLD)
+		rule(surface,Vector2(42,y+143),1170)
 
 func atlas_screen() -> void:
 	var surface = modal_base("THE WORLD BETWEEN THE SEALS", "The Unwritten Atlas", "Eight regions. Twelve towns. Thirty routes. Twelve dungeons. A fixed story across a seeded wilderness.")

@@ -4,3 +4,4 @@ output/
 artifacts/*.png
 artifacts/*.log
 __pycache__/
+.cache/

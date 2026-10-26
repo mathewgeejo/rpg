@@ -51,17 +51,61 @@ func room(index: int) -> Dictionary:
 	if rooms.has(index):
 		return rooms[index]
 	var result = _town() if index == 0 else _wilderness(index)
+	var collision: Dictionary = {}
+	for prop in result.props:
+		if int(prop.sprite) < 7:
+			var cell = Vector2i(prop.position/TILE)
+			if not collision.has(cell): collision[cell] = []
+			collision[cell].append(prop.position)
+	result["collision"] = collision
 	rooms[index] = result
 	return result
 
 func _town() -> Dictionary:
-	return {"id":0,"name":"Lanternwick", "subtitle":"LANTERN VALE · A TOWN HELD IN MEMORY", "size":Vector2(2304,1536),"spawn":Vector2(1080,1150),"tiles":[],"props":[],"enemies":[],"objects":[
+	var tiles: Array = []
+	var props: Array = []
+	var rng = RandomNumberGenerator.new()
+	rng.seed = 18391
+	for y in 48:
+		var row: Array = []
+		for x in 72:
+			var tile = 0
+			if x < 2 or y < 2 or x > 69 or y > 45: tile = 3
+			if (x >= 31 and x <= 37) or (y >= 25 and y <= 29 and x > 13 and x < 65) or (y >= 34 and y <= 37 and x > 16 and x < 43): tile = 1
+			if x >= 58 and x <= 61: tile = 2
+			if y >= 26 and y <= 28 and x >= 57 and x <= 62: tile = 6
+			# A genuine raised terrace, with a two-tile exposed cliff face.
+			if x >= 45 and x <= 56 and y >= 6 and y <= 16: tile = 5
+			if x >= 45 and x <= 56 and y >= 17 and y <= 18: tile = 4
+			if x >= 49 and x <= 51 and y >= 16 and y <= 20: tile = 7
+			row.append(tile)
+		tiles.append(row)
+	for p in [Vector2(830,850),Vector2(830,1160),Vector2(1380,920),Vector2(1100,650),Vector2(1430,1190)]:
+		props.append({"sprite":7,"position":p,"scale":1.0})
+	props.append({"sprite":8,"position":Vector2(1140,790),"scale":1.0})
+	props.append({"sprite":10,"position":Vector2(1620,390),"scale":1.0})
+	for p in [Vector2(960,700),Vector2(1250,750),Vector2(1450,1000),Vector2(830,1300)]:
+		props.append({"sprite":0,"position":p,"scale":1.0})
+	for y in range(3,46,3):
+		for x in range(3,69,3):
+			var point = Vector2(x*32+rng.randi_range(-10,10),y*32+rng.randi_range(-10,10))
+			var clear = false
+			for prop in props:
+				if prop.sprite == 7 and point.distance_to(prop.position-Vector2(0,60)) < 150: clear = true
+			if (x < 15 or x > 63 or y < 5 or y > 42) and not clear and tiles[y][x] in [0,3]:
+				props.append({"sprite":rng.randi_range(0,3),"position":point,"scale":1.0})
+			elif tiles[y][x] == 0 and not clear and rng.randf() < .21 and absi(x-34) > 7:
+				props.append({"sprite":13 if rng.randf() < .6 else 0,"position":point,"scale":1.0})
+	for p in [Vector2(900,980),Vector2(1280,1200),Vector2(950,600),Vector2(1410,930),Vector2(1930,900)]:
+		props.append({"sprite":11,"position":p,"scale":1.0})
+	return {"id":0,"name":"Lanternwick", "subtitle":"LANTERN VALE · A TOWN HELD IN MEMORY", "size":Vector2(2304,1536),"spawn":Vector2(1100,1050),"tiles":tiles,"props":props,"enemies":[],"objects":[
 		{"id":"mira","kind":"npc","name":"Mira · Cartographer","position":Vector2(1020,850),"sprite":-1},
-		{"id":"orin","kind":"npc","name":"Orin · Lantern keeper","position":Vector2(710,760),"sprite":-1},
+		{"id":"orin","kind":"npc","name":"Orin · Lantern keeper","position":Vector2(850,900),"sprite":-1},
 		{"id":"sella","kind":"npc","name":"Sella · Gardener","position":Vector2(1220,1120),"sprite":-1},
 		{"id":"lantern","kind":"rest","name":"Rest at the lantern","position":Vector2(1320,1020),"sprite":11},
 		{"id":"exit_1","kind":"exit","name":"Wispwood Path","position":Vector2(1100,1400),"to":1,"sprite":-1},
 		{"id":"ritual","kind":"ritual","name":"The Remembering Stone","position":Vector2(1300,650),"sprite":6}
+		,{"id":"board","kind":"board","name":"Wayfarer's commissions","position":Vector2(1200,940),"sprite":14}
 	]}
 
 func _wilderness(index: int) -> Dictionary:
@@ -85,6 +129,12 @@ func _wilderness(index: int) -> Dictionary:
 				tile = 1
 			row.append(tile)
 		tiles.append(row)
+	# Terraces are kept well away from the reserved road and quest anchors.
+	for y in range(15,31):
+		for x in range(8,27):
+			tiles[y][x] = 5 if y < 29 else 4
+	for y in range(28,34):
+		for x in range(15,18): tiles[y][x] = 7
 	var start = Vector2(path_x[HEIGHT-5]*TILE+16,(HEIGHT-5)*TILE+16)
 	var finish = Vector2(path_x[5]*TILE+16,5*TILE+16)
 	var props: Array = []
@@ -123,21 +173,35 @@ func walkable(index: int, point: Vector2) -> bool:
 	var zone = room(index)
 	if point.x < 40 or point.y < 40 or point.x > zone.size.x-40 or point.y > zone.size.y-40:
 		return false
-	if index == 0:
-		var corridors = [Rect2(890,240,370,1250),Rect2(680,520,640,510),Rect2(420,1050,1460,350),Rect2(1170,650,980,200),Rect2(1100,850,430,380),Rect2(1180,90,160,350)]
-		for corridor in corridors:
-			if corridor.has_point(point):
-				return true
-		return false
 	var cell = Vector2i(point/TILE)
 	var tile: int = zone.tiles[cell.y][cell.x]
-	if tile == 2 or tile == 3:
+	if tile == 2 or tile == 3 or tile == 4:
 		return false
+	if index == 0:
+		for prop in zone.props:
+			if prop.sprite == 7 and Rect2(prop.position-Vector2(64,82),Vector2(128,82)).has_point(point): return false
 	# Only the trunk's footprint blocks; canopy overlap remains walkable.
-	for prop in zone.props:
-		if int(prop.sprite) < 7 and point.distance_squared_to(prop.position) < 22.0*22.0:
-			return false
+	for y in range(-1,2):
+		for x in range(-1,2):
+			for trunk in zone.collision.get(cell+Vector2i(x,y),[]):
+				if point.distance_squared_to(trunk) < 22.0*22.0: return false
 	return true
+
+func commissions() -> Array:
+	var rng = RandomNumberGenerator.new()
+	rng.seed = world_seed+873719
+	var deck = [
+		{"id":"quiet","name":"A little quiet for the road","story":"Orin needs time to mend the trail lanterns. Quiet the restless echoes along the road.","kind":"defeat","target":rng.randi_range(4,7),"reward":45},
+		{"id":"names","name":"Names for the nameless","story":"The village archivist asks for memories the seals have misplaced. Bring back their fragments.","kind":"memory","target":rng.randi_range(3,5),"reward":50},
+		{"id":"lights","name":"Someone is waiting","story":"A traveler asks you to light both wilderness lanterns. Her partner is following the road home.","kind":"lantern","target":2,"reward":35},
+		{"id":"satchels","name":"What the river leaves","story":"Mira marks two lost satchels on your route. Recover their contents before the wilderness shifts.","kind":"chest","target":2,"reward":40}
+	]
+	var result: Array = []
+	while result.size() < 3:
+		var index = rng.randi_range(0,deck.size()-1)
+		result.append(deck[index])
+		deck.remove_at(index)
+	return result
 
 func reachable(index: int) -> bool:
 	var zone = room(index)

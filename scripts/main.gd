@@ -46,6 +46,7 @@ var changed: Dictionary = {}
 var quest_stage = 0
 var memories = 0
 var side_quests: Dictionary = {"lanterns":0,"garden":0,"letter":0}
+var contracts: Dictionary = {}
 var seal_choice = ""
 var specialization: Dictionary = {}
 var floating_texts: Array = []
@@ -58,9 +59,13 @@ var play_time = 0.0
 var screenshot_mode = ""
 var screenshot_frames = 0
 var testing = false
+var capture_elapsed = 0.0
+var capture_warm_frames = 0
+var hud_timer = 0.0
 const DEFAULT_KEYS = {"move_up":KEY_W,"move_down":KEY_S,"move_left":KEY_A,"move_right":KEY_D,"interact":KEY_E,"signature":KEY_Q,"dodge":KEY_SPACE,"circle":KEY_2,"star":KEY_3,"ward":KEY_R,"journal":KEY_J,"atlas":KEY_M,"codex":KEY_C}
 
 func _ready() -> void:
+	Engine.max_fps = 60
 	_setup_input()
 	_load_settings()
 	sound = Sound.new()
@@ -165,6 +170,7 @@ func new_journey(seed_value: int = 0, explore: bool = false) -> void:
 	answers = []
 	changed = {}
 	side_quests = {"lanterns":0,"garden":0,"letter":0}
+	contracts = {}
 	quest_stage = 0
 	memories = 0
 	seal_choice = ""
@@ -260,14 +266,21 @@ func _physics_process(delta: float) -> void:
 		if d < distance:
 			distance = d
 			nearest_object = object
-	ui.update_hud()
+	hud_timer -= delta
+	if hud_timer <= 0:
+		hud_timer = .1
+		ui.update_hud()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if screenshot_mode != "":
 		screenshot_frames += 1
+		if screenshot_frames > 20:
+			capture_elapsed += delta
+			capture_warm_frames += 1
 		if screenshot_frames == 100:
 			get_viewport().get_texture().get_image().save_png("res://artifacts/%s.png" % screenshot_mode)
 			print("CAPTURED ",screenshot_mode)
+			print("MEASURED: ",snappedf(capture_warm_frames/maxf(.001,capture_elapsed),.1)," FPS; renderer ",RenderingServer.get_video_adapter_name())
 			get_tree().quit()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -292,7 +305,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("atlas"): ui.atlas_screen()
 	elif event.is_action_pressed("codex"): ui.codex_screen()
 	elif event is InputEventMouseButton and event.pressed:
-		facing = player_pos.direction_to(get_global_mouse_position()-world_view.position)
+		facing = player_pos.direction_to((get_global_mouse_position()-world_view.position)/world_view.pixel_scale)
 		if event.button_index == MOUSE_BUTTON_LEFT: combat.basic()
 		if event.button_index == MOUSE_BUTTON_RIGHT: combat.cast_circle()
 	elif event is InputEventJoypadButton and event.pressed and event.button_index == JOY_BUTTON_RIGHT_STICK:
@@ -376,6 +389,7 @@ func interact() -> void:
 			enter_room(int(object.to))
 			save_game()
 		"ritual": ui.ritual_screen()
+		"board": ui.commission_screen()
 		"rest":
 			hp = max_hp
 			mana = max_mana
@@ -422,7 +436,7 @@ func talk(id: String) -> void:
 		if quest_stage == 0:
 			quest_stage = 2 if memories >= 3 else 1
 			ui.dialogue("Mira · Cartographer",["You have the look of someone the road hasn't finished with. Good. I need someone who can remember a stranger.","My brother's name was Elian. Yesterday, everyone knew him. Today, even our mother thinks I invented him.","He went to the old observatory. Find three memories in the wilderness, follow them past Stonewater Crossing, and ask the seal what it took from us."])
-		elif quest_stage >= 4:
+		elif quest_stage >= 4 and side_quests.letter != 1:
 			quest_stage = 5
 			var ending = "We remember him now. All of him, even the choice he made for us. It hurts. It is ours." if seal_choice == "remember" else "He is still missing from their stories. But the seal no longer takes anyone else. We can learn to remember him ourselves."
 			ui.dialogue("Mira · A map with room to change",[ending,"Keep the Atlas. There are seven more seals, and every road asks the same thing differently: what do we owe the world, and what may it ask of us?\n\nCHAPTER ONE COMPLETE\nYou can keep exploring Lantern Vale."])
@@ -457,6 +471,9 @@ func talk(id: String) -> void:
 	save_game()
 
 func choose_seal(choice: String) -> void:
+	if changed.has("seal_resolved"):
+		ui.dialogue("The Observatory Seal",["Your answer is part of the Atlas now. Mira is waiting in Lanternwick."])
+		return
 	seal_choice = choice
 	quest_stage = 4
 	changed["seal_resolved"] = true
@@ -465,11 +482,36 @@ func choose_seal(choice: String) -> void:
 	ui.dialogue("The world takes a breath",["Elian volunteered to become the memory holding Lantern Vale together. The seal turned one willing sacrifice into a machine that forgot to ask again.","You return his memory to the town. The grief arrives with the love. The seal will hold, but it will need willing keepers." if choice == "remember" else "You cut the seal's claim over human memory. The wilderness will shift again, but no one else will be taken to keep it still.","Return to Mira in Lanternwick. The portal at the northern edge of the observatory leads home."])
 	save_game()
 
+func commission_progress(entry: Dictionary) -> int:
+	var count = 0
+	for id in changed:
+		match entry.kind:
+			"defeat":
+				if str(id).begins_with("r") and "_e" in str(id): count += 1
+			"memory":
+				if str(id).begins_with("memory_"): count += 1
+			"lantern":
+				if str(id).begins_with("rest_"): count += 1
+			"chest":
+				if str(id).begins_with("chest_"): count += 1
+	return mini(count,entry.target)
+
+func commission_action(entry: Dictionary) -> void:
+	if not contracts.has(entry.id):
+		contracts[entry.id] = "active"
+	elif contracts[entry.id] == "active" and commission_progress(entry) >= entry.target:
+		contracts[entry.id] = "complete"
+		coins += entry.reward
+		gain_xp(35)
+		toast("Commission complete · %s\n+%d coins · +35 experience" % [entry.name,entry.reward])
+	save_game()
+	ui.commission_screen()
+
 func quest_text() -> String:
 	return ["Speak with Mira beside the village path.","Recover three memory fragments · %d / 3" % mini(memories,3),"Reach the Observatory beyond Stonewater Crossing.","Approach the Observatory Seal.","Return to Mira in Lanternwick.","Chapter complete · The road remains open."][clampi(quest_stage,0,5)]
 
 func state() -> Dictionary:
-	return {"seed":world_seed,"room":room_id,"position":[player_pos.x,player_pos.y],"class_id":class_id,"assigned":assigned,"rank":rank,"xp":xp,"hp":hp,"max_hp":max_hp,"mana":mana,"max_mana":max_mana,"coins":coins,"answers":answers,"changed":changed,"quest_stage":quest_stage,"memories":memories,"side_quests":side_quests,"seal_choice":seal_choice,"play_time":play_time}
+	return {"seed":world_seed,"room":room_id,"position":[player_pos.x,player_pos.y],"class_id":class_id,"assigned":assigned,"rank":rank,"xp":xp,"hp":hp,"max_hp":max_hp,"mana":mana,"max_mana":max_mana,"coins":coins,"answers":answers,"changed":changed,"quest_stage":quest_stage,"memories":memories,"side_quests":side_quests,"contracts":contracts,"seal_choice":seal_choice,"play_time":play_time}
 
 func save_game() -> bool:
 	if testing or not playing: return true
@@ -486,7 +528,8 @@ func continue_journey() -> void:
 	model = World.new(world_seed)
 	class_id = str(value.get("class_id","luck"))
 	class_def = data.class_by_id(class_id)
-	for property in ["assigned","rank","xp","hp","max_hp","mana","max_mana","coins","answers","changed","quest_stage","memories","side_quests","seal_choice","play_time"]:
+	class_id = class_def.id
+	for property in ["assigned","rank","xp","hp","max_hp","mana","max_mana","coins","answers","changed","quest_stage","memories","side_quests","contracts","seal_choice","play_time"]:
 		if value.has(property): set(property,value[property])
 	rank = clampi(rank,1,3)
 	quest_stage = clampi(quest_stage,0,5)
