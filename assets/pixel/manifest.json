@@ -490,6 +490,223 @@
       "source": "https://opengameart.org/content/lpc-medieval-village-decorations",
       "license": "CC-BY-SA-3.0",
       "source_type": "human-authored LPC pixel art"
+    },
+    {
+      "path": "assets/pixel/hero/hero.png",
+      "sha256": "a336af16f922f4cfe08b9c22d82ed217b8e224eb507fa1b5f7ea9f4d0b5e0996",
+      "source": "https://opengameart.org/content/universal-lpc-sprite-male-01",
+      "license": "CC-BY-SA-3.0",
+      "source_type": "human-drawn LPC layers, deterministic 2014 composition"
+    },
+    {
+      "path": "assets/custom/bell_chapel.png",
+      "sha256": "bc32065ca82ea2ce7593e06941eb4abd38897870a4c1ce969b0cf09db6b6a686",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/bench.png",
+      "sha256": "11427a634be5c5065c1b02310466c945ea6f40328f17bb2326115f654b28a701",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/board.png",
+      "sha256": "88dbb8727a4ed80d39927e7cdd2ddf57fe44cbc6d73e9ca518d11ec3aa44cdb4",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/briar_crown.png",
+      "sha256": "b5a74a924b50c9e672f24da75720361f43093a1c935960065c1802f48c240b89",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/chest.png",
+      "sha256": "b919176a5bc7d854c7256355e2c39fab53426c191b040ccdf8e6263f5aeae636",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/creatures.png",
+      "sha256": "7cf1e90ed754ca76ce0f74d1d14e9917fb068954d77ccc8ea136e64a72421795",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/fence.png",
+      "sha256": "61f999591b8c79c77a6ba9e005f5040a7602677ce45d17c04f32cedd022c8715",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/flowers.png",
+      "sha256": "d59890e1ae3303d9ba61b55b3f433f3fdaff67f9b7a0ad90d19c149bef681df3",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/guardian.png",
+      "sha256": "8ac11901c947847eb012942f448d1050714955e8df783b83fce0543b1fdb84e2",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/guardian_anim.png",
+      "sha256": "e285030adf25d3abded901f8e3f77cab1cab64fb7ee45460d86f2e4c5f800541",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/house.png",
+      "sha256": "e6c4c2786da81f5cc3a945ad3e025f4bd7bbb1e72aaadef5a470a258fb46565a",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/house_green.png",
+      "sha256": "83a32dd8983dd2fbceadfc2dbc3fbb849be3ed5d7614b98a80b81d82b520f256",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/house_rose.png",
+      "sha256": "184bef1b490383b90b7db6817a28f6a9c27a1a0bdf3d8a37346791bbd3fb9027",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/lantern.png",
+      "sha256": "7de8f4af8205a12ba8d755be319fd79eb70dcda6dfd447c76b2b9dedbe04ff57",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/memory_stone.png",
+      "sha256": "45be41b039ecf6317305472a20aa5c790d251a7d8260a00bae22a5d31e1369d1",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/mira.png",
+      "sha256": "c3985fe067d0427643be19abad1faafe00e0a72de7e7605fca47f81713e10ec2",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/observatory_dome.png",
+      "sha256": "084a07824e9869364e02dbe5f9e72583243e2f638e7ade94f11894530190ced9",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/orin.png",
+      "sha256": "171c08964647a2a3a590828180925dbb83f1ea8441acb1af056eaac3bccf064e",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/pine.png",
+      "sha256": "c72a0cccbea2ec747c1fd32d02482f2d50c6cf3763d9d55efde29b64f5e30bc0",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/root_gate.png",
+      "sha256": "9cab4031ffb9de4fbdc038a3098ceb0b8df0732b635fd0972b432c74d10612f0",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/ruin.png",
+      "sha256": "f4cfb2403d4df4f9e253b31a212ea62a5aff2e9c94d6bb243399cfe4f2199b69",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/sella.png",
+      "sha256": "f2f23ca93e273f98353fe2b6c044deec35d098a28a66946dcc2e034e80c37fad",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/stall.png",
+      "sha256": "a4e9219591d2d6ef76d7122e724b7c144dc5b7a85fcbdeba8387140f8109a870",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/stump.png",
+      "sha256": "6d5a15ad29033e2b17521117b32049281b665443d19383e43b605b6c02b20fd2",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/terrain.png",
+      "sha256": "9efd36fee4e9b18ed31253418b8d7eb931624db5596d560b6be6ae6ccfd67d5b",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/tide_bell.png",
+      "sha256": "8b98237510c8d48c83bbdc2e701131e583b952a0219ce0e89f440c8ebc778b16",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/tree.png",
+      "sha256": "7a53def6cc3afd1a76766e74aca966a34556430e818afb5f2764d915a0c07ea9",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/wanderer_cloth.png",
+      "sha256": "f85139a5cd64877e51419a5a8eeeda7d94562e63e56c8504eb3cd7c7f49cd07f",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/wanderer_leather.png",
+      "sha256": "e114aad45acd3e5cd095f24e8a23b3500225252a125c16cf5370df69df227dd4",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
+    },
+    {
+      "path": "assets/custom/wanderer_plate.png",
+      "sha256": "e240b903db142fe3ea1ebd236528737bee4e4e59f5d2d5e251caeecb0c6228f3",
+      "source": "tools/draw_pixel_art.py: editable pixel patterns and authored poses",
+      "license": "Project original pixel artwork",
+      "source_type": "code-authored pixel art; no image-generation model"
     }
   ]
 }

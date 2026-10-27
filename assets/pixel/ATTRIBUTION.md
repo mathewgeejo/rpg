@@ -35,3 +35,13 @@ Artists and contributors: bluecarrot16, Lanea Zimmerman (Sharm), Reemax (Tuomo U
 All information in [decorations/CREDITS-decorations-medieval.txt](decorations/CREDITS-decorations-medieval.txt) is included and must be retained with redistribution.
 
 The assets retain their own licenses. Adaptations of the artwork must retain the applicable attribution and share-alike terms. No endorsement by the artists is implied.
+
+## Hero: Universal LPC Sprite Male 01 (2014)
+
+Source: https://opengameart.org/content/universal-lpc-sprite-male-01
+
+Original image: https://opengameart.org/sites/default/files/universal-lpc-sprite_male_01_full.png
+
+Selected license: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+Credit Gaurav Munjal, Stephen Challener (Redshrike), and the LPC contributors listed in the complete [hero/AUTHORS.txt](hero/AUTHORS.txt). The sheet was assembled in 2014 by a deterministic sprite-layer compositor from human-drawn LPC art; this is not generative AI. The original PNG is unchanged. The game selects its original walking, casting, slashing, and hurt animation frames at runtime.

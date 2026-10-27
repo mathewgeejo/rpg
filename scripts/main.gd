@@ -12,6 +12,8 @@ var data = Data.new()
 var store = Store.new()
 var model = World.new()
 var combat
+var companions
+var god_mode = false
 var world_view
 var ui
 var sound
@@ -21,7 +23,7 @@ var paused = false
 var assigned = false
 var world_seed = 731904
 var room_id = 0
-var player_pos = Vector2(1080,1150)
+var player_pos = Vector2(656,688)
 var facing = Vector2.DOWN
 var animation = "idle"
 var animation_time = 0.0
@@ -49,6 +51,13 @@ var side_quests: Dictionary = {"lanterns":0,"garden":0,"letter":0}
 var contracts: Dictionary = {}
 var seal_choice = ""
 var specialization: Dictionary = {}
+var armor = "cloth"
+var magic_focus = "aether"
+var sword_stance = "flowing"
+var circle_strain = 0.0
+var skills = {"sword":0,"circles":0,"stars":0,"woodcutting":0,"fishing":0}
+var inventory = {"willow_wood":0,"river_fish":0}
+var harvest_cd = 0.0
 var floating_texts: Array = []
 var nearest_object: Dictionary = {}
 var settings = {"sound":true,"flashes":true,"shake":true,"text_scale":1.0}
@@ -61,8 +70,10 @@ var screenshot_frames = 0
 var testing = false
 var capture_elapsed = 0.0
 var capture_warm_frames = 0
+var capture_times: Array[float] = []
+var capture_peak_chunks = 0
 var hud_timer = 0.0
-const DEFAULT_KEYS = {"move_up":KEY_W,"move_down":KEY_S,"move_left":KEY_A,"move_right":KEY_D,"interact":KEY_E,"signature":KEY_Q,"dodge":KEY_SPACE,"circle":KEY_2,"star":KEY_3,"ward":KEY_R,"journal":KEY_J,"atlas":KEY_M,"codex":KEY_C}
+const DEFAULT_KEYS = {"move_up":KEY_W,"move_down":KEY_S,"move_left":KEY_A,"move_right":KEY_D,"attack":KEY_F,"interact":KEY_E,"signature":KEY_Q,"dodge":KEY_SPACE,"circle":KEY_2,"star":KEY_3,"ward":KEY_R,"journal":KEY_J,"atlas":KEY_M,"codex":KEY_C,"character":KEY_K,"tame":KEY_T,"companions":KEY_P,"debug":KEY_F10}
 
 func _ready() -> void:
 	Engine.max_fps = 60
@@ -72,6 +83,7 @@ func _ready() -> void:
 	add_child(sound)
 	sound.enabled = settings.sound
 	combat = Combat.new(self)
+	companions = preload("res://scripts/companions.gd").new(self)
 	world_view = View.new()
 	world_view.game = self
 	add_child(world_view)
@@ -89,11 +101,69 @@ func _ready() -> void:
 				new_journey(731904,true)
 				if screenshot_mode == "ritual": ui.ritual_screen()
 				if screenshot_mode == "map": ui.atlas_screen()
-				if screenshot_mode == "forest":
-					enter_room(1)
-					player_pos = Vector2(1470,1450)
+				if screenshot_mode == "character": ui.character_screen()
+				if screenshot_mode == "dialogue":
+					player_pos = Vector2(656,496)
+					world_view.camera = player_pos
+					talk("mira")
+				if screenshot_mode == "summon":
+					var result = preload("res://scripts/summoning.gd").summon(self)
+					ui.summon_reveal(result)
+				if screenshot_mode == "debug": ui.debug_screen()
+				if screenshot_mode == "companions":
+					for i in 5: changed["pet:"+str(i)] = true
+					ui.companion_screen()
+				if screenshot_mode == "settings": ui.settings_screen()
+				if screenshot_mode == "observatory":
+					enter_room(3)
+					player_pos = Vector2(496,310)
 					world_view.camera = player_pos
 					invulnerable = 1000
+				if screenshot_mode == "bossbenchmark":
+					enter_room(3)
+					god_mode = true
+					assign_class("glass")
+					changed["pet:active"] = 4
+					for enemy in combat.enemies:
+						enemy.hp = 100000
+						enemy.max_hp = 200000
+					player_pos = Vector2(496,510)
+					world_view.camera = player_pos
+				if screenshot_mode in ["briar","tide"]:
+					enter_room(1 if screenshot_mode == "briar" else 2)
+					for enemy in combat.enemies:
+						if enemy.boss:
+							player_pos = enemy.position+Vector2(0,15 if screenshot_mode == "briar" else 100)
+							enemy.cooldown = 0
+					world_view.camera = player_pos
+					invulnerable = 1000
+				if screenshot_mode == "battle":
+					enter_room(3)
+					quest_stage = 2
+					class_id = "glass"
+					class_def = data.class_by_id(class_id)
+					assigned = true
+					armor = "leather"
+					player_pos = Vector2(496,510)
+					world_view.camera = player_pos
+					invulnerable = 1000
+				if screenshot_mode in ["forest","benchmark"]:
+					enter_room(1)
+					player_pos = Vector2(592,560) if screenshot_mode == "forest" else zone.spawn
+					world_view.camera = player_pos
+					invulnerable = 1000
+					if screenshot_mode == "benchmark":
+						class_id = "glass"
+						class_def = data.class_by_id(class_id)
+						assigned = true
+				if screenshot_mode == "depth":
+					player_pos = Vector2(1008,496)
+					world_view.camera = player_pos
+				if screenshot_mode in ["play","forest","depth","benchmark","battle","briar","tide","bossbenchmark","observatory"]:
+					ui.toast_time = 0
+					ui.toast_panel.hide()
+					ui.banner_time = 0
+					if is_instance_valid(ui.banner): ui.banner.hide()
 
 func _setup_input() -> void:
 	for action in DEFAULT_KEYS:
@@ -153,7 +223,8 @@ func rebind(action: String, keycode: int, persist: bool = true) -> void:
 	if persist: save_settings()
 
 func new_journey(seed_value: int = 0, explore: bool = false) -> void:
-	world_seed = seed_value if seed_value != 0 else int(Time.get_unix_time_from_system())%999999999
+	god_mode = false
+	world_seed = 731904
 	model = World.new(world_seed)
 	class_id = "luck"
 	class_def = data.class_by_id(class_id)
@@ -166,6 +237,17 @@ func new_journey(seed_value: int = 0, explore: bool = false) -> void:
 	mana = max_mana
 	stamina = 100
 	shield = 0
+	invulnerable = 0
+	invisible = 0
+	haste = 0
+	rooted = 0
+	dodge_time = 0
+	harvest_cd = 0
+	luck = 0
+	autosave_time = 30
+	animation = "idle"
+	animation_time = 0
+	floating_texts.clear()
 	coins = 25
 	answers = []
 	changed = {}
@@ -175,9 +257,17 @@ func new_journey(seed_value: int = 0, explore: bool = false) -> void:
 	memories = 0
 	seal_choice = ""
 	specialization = {}
+	armor = "cloth"
+	magic_focus = "aether"
+	sword_stance = "flowing"
+	circle_strain = 0
+	skills = {"sword":0,"circles":0,"stars":0,"woodcutting":0,"fishing":0}
+	inventory = {"willow_wood":0,"river_fish":0}
 	play_time = 0
 	combat = Combat.new(self)
-	combat.rng.seed = world_seed
+	companions = preload("res://scripts/companions.gd").new(self)
+	if testing: combat.rng.seed = world_seed
+	else: combat.rng.randomize()
 	playing = true
 	paused = false
 	enter_room(0)
@@ -188,8 +278,18 @@ func new_journey(seed_value: int = 0, explore: bool = false) -> void:
 		ui.ritual_screen()
 
 func assign_class(id: String) -> void:
+	changed["class:"+id] = true
 	class_id = id
 	class_def = data.class_by_id(id)
+	max_mana = 100+memories*3 if id == "memory" else 100
+	mana = minf(mana,max_mana)
+	combat.hit_count = 0
+	combat.empower = 0
+	combat.vow = 0
+	combat.prisms.clear()
+	combat.familiar_time = 0
+	combat.last_action = ""
+	armor = "plate" if class_def.discipline == "star" else ("leather" if class_def.discipline == "hybrid" else "cloth")
 	assigned = true
 	specialization = data.specialization(id,world_seed,rank) if rank > 1 else {}
 	ui.close_modal()
@@ -204,8 +304,9 @@ func enter_room(index: int) -> void:
 	if world_view != null: world_view.prepare_ground()
 	player_pos = zone.spawn
 	if index > 0 and previous > index: player_pos = zone.finish+Vector2(0,120)
-	if index == 0 and previous > 0: player_pos = Vector2(1100,1320)
+	if index == 0 and previous > 0: player_pos = Vector2(656,816)
 	combat.load_room(zone)
+	if class_id == "mask" and index > 0: shield = maxf(shield,12)
 	nearest_object = {}
 	world_view.camera = player_pos
 	if ui != null:
@@ -217,6 +318,8 @@ func enter_room(index: int) -> void:
 func _physics_process(delta: float) -> void:
 	if not playing or paused: return
 	play_time += delta
+	harvest_cd = maxf(0,harvest_cd-delta)
+	circle_strain = maxf(0,circle_strain-delta*16)
 	autosave_time -= delta
 	if autosave_time < 0:
 		autosave_time = 30
@@ -238,28 +341,55 @@ func _physics_process(delta: float) -> void:
 		if stick.length() > .2: move = stick
 		var aim = Vector2(Input.get_joy_axis(joy,JOY_AXIS_RIGHT_X),Input.get_joy_axis(joy,JOY_AXIS_RIGHT_Y))
 		if aim.length() > .25: facing = aim.normalized()
+		if Input.get_joy_axis(joy,JOY_AXIS_TRIGGER_RIGHT) > .5: combat.basic()
 	move = move.limit_length()
 	if move.length() > .1 and animation_time <= 0: facing = move.normalized()
-	var speed = 190.0*stat("speed")*(1.35 if haste > 0 else 1.0)
+	var speed = 115.0*stat("speed")*(1.35 if haste > 0 else 1.0)
 	if dodge_time > 0:
 		dodge_time -= delta
 		move = facing
-		speed = 580
+		speed = 420
 		animation = "dodge"
 	elif animation_time <= 0:
 		animation = "run" if move.length() > .1 else "idle"
 	if rooted > 0: speed = 0
 	var step = move*speed*delta
-	if model.walkable(room_id,player_pos+Vector2(step.x,0)): player_pos.x += step.x
-	if model.walkable(room_id,player_pos+Vector2(0,step.y)): player_pos.y += step.y
+	if model.walkable(room_id,player_pos+Vector2(step.x,0),player_pos): player_pos.x += step.x
+	if model.walkable(room_id,player_pos+Vector2(0,step.y),player_pos): player_pos.y += step.y
 	if class_id == "vow" and move.length() < .1: shield = minf(35,shield+delta*2)
 	if class_id == "banner" and move.length() > .1: haste = maxf(haste,.3)
+	if class_id == "compass" and move.dot(-combat.last_attack_direction) > .7: haste = maxf(haste,.4)
+	if god_mode:
+		hp = max_hp
+		mana = max_mana
+		stamina = 100
+		circle_strain = 0
+		combat.signature_cd = 0
+		combat.circle_cd = 0
+		combat.star_cd = 0
+		combat.ward_cd = 0
 	combat.tick(delta)
+	companions.tick(delta)
+	for npc in zone.objects:
+		if npc.kind != "npc" or not npc.has("path"): continue
+		if npc.position.distance_to(player_pos) < 85:
+			npc.moving = false
+			npc.facing = npc.position.direction_to(player_pos)
+			continue
+		var target: Vector2 = npc.path[int(npc.path_index)]
+		if npc.position.distance_to(target) < 3:
+			npc.path_index = (int(npc.path_index)+1)%npc.path.size()
+			target = npc.path[int(npc.path_index)]
+		var next: Vector2 = npc.position.move_toward(target,delta*22)
+		npc.moving = model.walkable(room_id,next,npc.position)
+		if npc.moving:
+			npc.facing = npc.position.direction_to(next)
+			npc.position = next
 	for item in floating_texts.duplicate():
 		item.time -= delta
 		if item.time <= 0: floating_texts.erase(item)
 	nearest_object = {}
-	var distance = 95.0
+	var distance = 60.0
 	for object in zone.objects:
 		if changed.has(object.id) and object.kind in ["memory","chest"]: continue
 		var d: float = object.position.distance_to(player_pos)
@@ -274,13 +404,50 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if screenshot_mode != "":
 		screenshot_frames += 1
+		if screenshot_mode == "battle" and screenshot_frames == 80:
+			combat.signature()
+			var boss = combat.enemies.filter(func(e): return e.boss)[0]
+			boss.windup = 1.2
+			boss.attack_target = player_pos
+		if screenshot_mode == "dialogue" and screenshot_frames == 98:
+			ui.dialogue_text.visible_characters = -1
 		if screenshot_frames > 20:
 			capture_elapsed += delta
 			capture_warm_frames += 1
-		if screenshot_frames == 100:
+			capture_times.append(delta*1000)
+			capture_peak_chunks = maxi(capture_peak_chunks,world_view.chunks.size())
+		if screenshot_mode == "benchmark":
+			player_pos.y = maxf(250,player_pos.y-delta*65)
+			var row = clampi(int(player_pos.y/32),0,zone.tiles.size()-1)
+			var road: Array = []
+			for x in zone.tiles[row].size():
+				if zone.tiles[row][x] == 1: road.append(x)
+			if not road.is_empty(): player_pos.x = road[road.size()/2]*32+16
+			facing = Vector2.UP
+			animation = "run"
+			if screenshot_frames%24 == 0:
+				mana = 100
+				combat.signature_cd = 0
+				combat.signature()
+				combat.cast_circle()
+				combat.basic()
+		if screenshot_mode == "bossbenchmark":
+			var angle = screenshot_frames*.012
+			player_pos = Vector2(496,400)+Vector2(cos(angle)*135,sin(angle)*110)
+			facing = player_pos.direction_to(Vector2(496,400))
+			animation = "run"
+			if screenshot_frames%20 == 0:
+				combat.signature()
+				combat.cast_circle()
+				combat.basic()
+		var capture_limit = 1800 if screenshot_mode == "bossbenchmark" else (600 if screenshot_mode == "benchmark" else 100)
+		if screenshot_frames == capture_limit:
 			get_viewport().get_texture().get_image().save_png("res://artifacts/%s.png" % screenshot_mode)
 			print("CAPTURED ",screenshot_mode)
 			print("MEASURED: ",snappedf(capture_warm_frames/maxf(.001,capture_elapsed),.1)," FPS; renderer ",RenderingServer.get_video_adapter_name())
+			capture_times.sort()
+			print("P95 frame interval: ",snappedf(capture_times[int(capture_times.size()*.95)],.01)," ms; peak resident chunks: ",capture_peak_chunks,"; sampled seconds: ",snappedf(capture_elapsed,.01))
+			print("WINDOW: ",get_window().size,"; VIEWPORT TEXTURE: ",get_viewport().get_texture().get_size())
 			get_tree().quit()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -292,10 +459,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if not playing: return
 		if paused: ui.close_modal()
+		elif event is InputEventJoypadButton and event.button_index == JOY_BUTTON_B: dodge()
 		else: ui.pause_screen()
 		return
 	if not playing or paused: return
-	if event.is_action_pressed("interact"): interact()
+	if event.is_action_pressed("debug"): ui.debug_screen()
+	elif event.is_action_pressed("tame"): companions.tame()
+	elif event.is_action_pressed("companions"): ui.companion_screen()
+	elif event.is_action_pressed("attack"): combat.basic()
+	elif event.is_action_pressed("interact"): interact()
 	elif event.is_action_pressed("signature"): combat.signature()
 	elif event.is_action_pressed("circle"): combat.cast_circle()
 	elif event.is_action_pressed("star"): combat.star_step()
@@ -304,6 +476,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("journal"): ui.journal_screen()
 	elif event.is_action_pressed("atlas"): ui.atlas_screen()
 	elif event.is_action_pressed("codex"): ui.codex_screen()
+	elif event.is_action_pressed("character"): ui.character_screen()
 	elif event is InputEventMouseButton and event.pressed:
 		facing = player_pos.direction_to((get_global_mouse_position()-world_view.position)/world_view.pixel_scale)
 		if event.button_index == MOUSE_BUTTON_LEFT: combat.basic()
@@ -327,12 +500,13 @@ func blink(displacement: Vector2) -> void:
 	var direction = displacement.normalized()
 	for i in int(distance/8):
 		var next = player_pos+direction*8
-		if not model.walkable(room_id,next): break
+		if not model.walkable(room_id,next,player_pos): break
 		player_pos = next
 	invulnerable = maxf(invulnerable,.2)
 
 func take_damage(amount: float) -> void:
-	if invulnerable > 0: return
+	if god_mode or invulnerable > 0: return
+	if armor == "plate": amount *= .9
 	if class_id == "burden" and stamina > 65: amount *= .75
 	var absorbed = minf(shield,amount)
 	shield -= absorbed
@@ -363,17 +537,78 @@ func heal(amount: float) -> void:
 
 func stat(name: String) -> float:
 	var value = 1.0
+	if name == "speed": value *= 1.08 if armor == "leather" else (.94 if armor == "plate" else 1.0)
+	if name == "shield" and armor == "plate": value *= 1.2
+	if name == "mana_regen" and armor == "cloth": value *= 1.15
+	if name == "circle_power": value *= (1.1 if armor == "cloth" else .95 if armor == "plate" else 1.0)*(1+skill_level("circles")*.02)
+	if name == "sword_power": value *= (1.08 if armor == "plate" else .95 if armor == "cloth" else 1.0)*(1+skill_level("sword")*.02)
 	if not specialization.is_empty():
 		if specialization.stat == name: value += specialization.bonus
 		if specialization.cost == name: value -= specialization.penalty
 	return value
+
+func skill_level(name: String) -> int:
+	return mini(9,1+int(sqrt(float(skills.get(name,0))/20.0)))
+
+func train_skill(name: String, amount: int) -> void:
+	var before = skill_level(name)
+	skills[name] = int(skills.get(name,0))+amount
+	if skill_level(name) > before: toast("%s · Level %d" % [name.capitalize(),skill_level(name)])
+
+func eat_fish() -> void:
+	if inventory.river_fish <= 0:
+		toast("Catch a river fish near the village bridge first.")
+		return
+	if hp >= max_hp:
+		toast("Save it for the road. You are already at full health.")
+		return
+	inventory.river_fish -= 1
+	heal(25)
+	save_game()
+
+func equip_armor(choice: String) -> void:
+	armor = choice
+	save_game()
+	ui.character_screen()
+
+func sell_material(item: String) -> void:
+	if item not in ["river_fish","willow_wood"] or inventory.get(item,0) < 1:
+		toast("Gather supplies before selling them.")
+		return
+	inventory[item] -= 1
+	coins += 6 if item == "river_fish" else 4
+	save_game()
+	ui.shop_screen()
+
+func buy_fish() -> void:
+	if coins < 10:
+		toast("A wrapped river fish costs 10 coins.")
+		return
+	coins -= 10
+	inventory.river_fish += 1
+	save_game()
+	ui.shop_screen()
+
+func craft_charm() -> void:
+	if changed.has("willow_charm"): return
+	if inventory.willow_wood < 3 or coins < 10:
+		toast("A willow charm needs 3 pieces of willow wood and 10 coins.")
+		return
+	inventory.willow_wood -= 3
+	coins -= 10
+	changed["willow_charm"] = true
+	max_hp += 10
+	heal(10)
+	save_game()
+	toast("You carved a willow charm. Maximum health +10.")
+	ui.character_screen()
 
 func gain_xp(amount: int) -> void:
 	xp += amount
 	var desired = 3 if xp >= 420 else (2 if xp >= 140 else 1)
 	if desired > rank:
 		rank = desired
-		max_hp = 120+20*(rank-1)
+		max_hp = 120+20*(rank-1)+(10 if side_quests.garden >= 2 else 0)+(10 if changed.has("willow_charm") else 0)+(10 if changed.has("hearth_welcome") else 0)
 		hp = max_hp
 		specialization = data.specialization(class_id,world_seed,rank)
 		toast("Rank %d · %s %s\n%s +%d%%, %s −%d%%" % [rank,specialization.name,class_def.name,specialization.stat,int(specialization.bonus*100),specialization.cost,int(specialization.penalty*100)])
@@ -385,17 +620,44 @@ func interact() -> void:
 		return
 	var object = nearest_object
 	match object.kind:
+		"lore":
+			changed[object.id] = true
+			ui.dialogue(object.name,object.pages)
+			save_game()
 		"exit":
 			enter_room(int(object.to))
 			save_game()
 		"ritual": ui.ritual_screen()
 		"board": ui.commission_screen()
+		"shop": ui.shop_screen()
+		"fishing", "woodcutting":
+			if harvest_cd > 0: return
+			var key = "harvest:"+object.id
+			if int(changed.get(key,0)) >= 3:
+				toast("Let this spot recover. Rest at a lantern before returning.")
+				return
+			changed[key] = int(changed.get(key,0))+1
+			harvest_cd = 1.5
+			rooted = .55
+			animation = "cast" if object.kind == "fishing" else "attack"
+			animation_time = .55 if object.kind == "fishing" else .3
+			var item = "river_fish" if object.kind == "fishing" else "willow_wood"
+			inventory[item] += 1
+			train_skill(object.kind,12)
+			toast("+1 %s   ·   %s XP +12" % [item.replace("_"," "),object.kind.capitalize()])
+			save_game()
 		"rest":
+			for key in changed.keys():
+				if str(key).begins_with("harvest:"): changed.erase(key)
 			hp = max_hp
 			mana = max_mana
 			stamina = 100
 			shield = 0
 			changed.erase("lantern_mercy")
+			for area in [1,2]:
+				for enemy in model.room(area).enemies:
+					if not enemy.boss: changed["respawn:"+enemy.id] = true
+			combat.load_room(zone)
 			if class_id == "hearth" and not changed.has("hearth_welcome"):
 				max_hp += 10
 				hp = max_hp
@@ -411,7 +673,7 @@ func interact() -> void:
 			memories += 1
 			gain_xp(25)
 			if class_id == "coin": heal(7)
-			if class_id == "memory": max_mana += 3
+			if class_id == "memory": max_mana = 100+memories*3
 			if memories >= 3 and quest_stage == 1: quest_stage = 2
 			combat.fx("bloom",object.position,100,Color("9ee3d0"),1)
 			ui.dialogue("A borrowed memory",["“My sister tied a gold thread around my wrist. So I would always find my way home.”","For a moment, the voice is yours. Then the forest is quiet again.\n\nMemory fragments: %d / 3" % memories])
@@ -439,7 +701,7 @@ func talk(id: String) -> void:
 		elif quest_stage >= 4 and side_quests.letter != 1:
 			quest_stage = 5
 			var ending = "We remember him now. All of him, even the choice he made for us. It hurts. It is ours." if seal_choice == "remember" else "He is still missing from their stories. But the seal no longer takes anyone else. We can learn to remember him ourselves."
-			ui.dialogue("Mira · A map with room to change",[ending,"Keep the Atlas. There are seven more seals, and every road asks the same thing differently: what do we owe the world, and what may it ask of us?\n\nCHAPTER ONE COMPLETE\nYou can keep exploring Lantern Vale."])
+			ui.dialogue("Mira · A map with room to change",[ending,"Keep the Atlas. A map should leave room for people to change. You have given this little valley that much.\n\nCHAPTER ONE COMPLETE\nYou can keep exploring Lantern Vale."])
 		elif side_quests.letter == 1:
 			side_quests.letter = 2
 			coins += 35
@@ -479,7 +741,7 @@ func choose_seal(choice: String) -> void:
 	changed["seal_resolved"] = true
 	coins += 80
 	gain_xp(150)
-	ui.dialogue("The world takes a breath",["Elian volunteered to become the memory holding Lantern Vale together. The seal turned one willing sacrifice into a machine that forgot to ask again.","You return his memory to the town. The grief arrives with the love. The seal will hold, but it will need willing keepers." if choice == "remember" else "You cut the seal's claim over human memory. The wilderness will shift again, but no one else will be taken to keep it still.","Return to Mira in Lanternwick. The portal at the northern edge of the observatory leads home."])
+	ui.dialogue("The world takes a breath",["Elian volunteered to become the memory holding Lantern Vale together. The seal turned one willing sacrifice into a machine that forgot to ask again.","You return his memory to the town. The grief arrives with the love. The seal will hold, but it will need willing keepers." if choice == "remember" else "You cut the seal's claim over human memory. The road will need watchful travelers again, but no one else will be taken to keep it safe.","Return to Mira in Lanternwick. The portal at the northern edge of the observatory leads home."])
 	save_game()
 
 func commission_progress(entry: Dictionary) -> int:
@@ -487,7 +749,7 @@ func commission_progress(entry: Dictionary) -> int:
 	for id in changed:
 		match entry.kind:
 			"defeat":
-				if str(id).begins_with("r") and "_e" in str(id): count += 1
+				if (str(id).begins_with("r1_e") or str(id).begins_with("r2_e")) and (not changed.get("tamed:"+str(id),false) or changed.get("defeated:"+str(id),false)): count += 1
 			"memory":
 				if str(id).begins_with("memory_"): count += 1
 			"lantern":
@@ -511,7 +773,7 @@ func quest_text() -> String:
 	return ["Speak with Mira beside the village path.","Recover three memory fragments · %d / 3" % mini(memories,3),"Reach the Observatory beyond Stonewater Crossing.","Approach the Observatory Seal.","Return to Mira in Lanternwick.","Chapter complete · The road remains open."][clampi(quest_stage,0,5)]
 
 func state() -> Dictionary:
-	return {"seed":world_seed,"room":room_id,"position":[player_pos.x,player_pos.y],"class_id":class_id,"assigned":assigned,"rank":rank,"xp":xp,"hp":hp,"max_hp":max_hp,"mana":mana,"max_mana":max_mana,"coins":coins,"answers":answers,"changed":changed,"quest_stage":quest_stage,"memories":memories,"side_quests":side_quests,"contracts":contracts,"seal_choice":seal_choice,"play_time":play_time}
+	return {"seed":world_seed,"room":room_id,"position":[player_pos.x,player_pos.y],"class_id":class_id,"assigned":assigned,"rank":rank,"xp":xp,"hp":hp,"max_hp":max_hp,"mana":mana,"max_mana":max_mana,"coins":coins,"answers":answers,"changed":changed,"quest_stage":quest_stage,"memories":memories,"side_quests":side_quests,"contracts":contracts,"seal_choice":seal_choice,"play_time":play_time,"armor":armor,"magic_focus":magic_focus,"sword_stance":sword_stance,"skills":skills,"inventory":inventory,"combat_rng_state":str(combat.rng.state)}
 
 func save_game() -> bool:
 	if testing or not playing: return true
@@ -520,6 +782,7 @@ func save_game() -> bool:
 	return success
 
 func continue_journey() -> void:
+	god_mode = false
 	var value = store.load_state()
 	if value.is_empty():
 		toast(store.last_error)
@@ -529,8 +792,21 @@ func continue_journey() -> void:
 	class_id = str(value.get("class_id","luck"))
 	class_def = data.class_by_id(class_id)
 	class_id = class_def.id
-	for property in ["assigned","rank","xp","hp","max_hp","mana","max_mana","coins","answers","changed","quest_stage","memories","side_quests","contracts","seal_choice","play_time"]:
+	for property in ["assigned","rank","xp","hp","max_hp","mana","max_mana","coins","answers","changed","quest_stage","memories","side_quests","contracts","seal_choice","play_time","armor","magic_focus","sword_stance","skills","inventory"]:
 		if value.has(property): set(property,value[property])
+	for key in ["sword","circles","stars","woodcutting","fishing"]: skills[key] = maxi(0,int(skills.get(key,0)))
+	for key in ["willow_wood","river_fish"]: inventory[key] = maxi(0,int(inventory.get(key,0)))
+	for key in ["lanterns","garden","letter"]: side_quests[key] = maxi(0,int(side_quests.get(key,0)))
+	if armor not in ["cloth","leather","plate"]: armor = "cloth"
+	if magic_focus not in ["aether","ember","frost"]: magic_focus = "aether"
+	if sword_stance not in ["flowing","resolute","rending"]: sword_stance = "flowing"
+	shield = 0
+	circle_strain = 0
+	dodge_time = 0
+	rooted = 0
+	invisible = 0
+	invulnerable = 0
+	haste = 0
 	rank = clampi(rank,1,3)
 	quest_stage = clampi(quest_stage,0,5)
 	max_hp = maxf(1,max_hp)
@@ -539,7 +815,9 @@ func continue_journey() -> void:
 	mana = clampf(mana,0,max_mana)
 	specialization = data.specialization(class_id,world_seed,rank) if rank > 1 else {}
 	combat = Combat.new(self)
+	companions = preload("res://scripts/companions.gd").new(self)
 	combat.rng.seed = world_seed
+	if value.has("combat_rng_state"): combat.rng.state = int(value.combat_rng_state)
 	playing = true
 	paused = false
 	enter_room(int(value.room))

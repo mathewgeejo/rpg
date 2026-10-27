@@ -121,6 +121,48 @@ dict(id='library',name='Salt Library',theme='Truth, privacy, and inherited blame
 dict(id='crown',name='Hollow Crown',theme='Power, legitimacy, and shared responsibility',seal='The Empty Throne',color='#cbb07b'),
 dict(id='meridian',name='Dawnless Meridian',theme='Identity, freedom, and an unwritten future',seal='The First Absence',color='#b597bf')]
 
+# The live roster: (rarity, basic attack, gameplay description).
+ROSTER = {
+'luck': ('S', 'Dice Fan', 'Throw three dice. Every third volley exposes enemies; dodges load your special.'),
+'oath': ('B', 'Oath Cleave', 'Wide sword arcs build vows. Spend vows on a devastating exposure strike.'),
+'memory': ('A', 'Recollection', 'A short blast repeats after a delay. Echoes reward holding a choke point.'),
+'thorn': ('B', 'Briar Seed', 'Poison bolts wear foes down. Received damage feeds a slowing thorn garden.'),
+'door': ('SSS', 'Rift Needle', 'Long piercing lines weaken foes. Teleport through the battlefield with your special.'),
+'glass': ('SS', 'Shard Fan', 'Five short-range shards. Basic attacks detonate your placed prisms.'),
+'clock': ('SS', 'Pendulum', 'Slow a wide area. The third pulse briefly stops time around you.'),
+'ink': ('A', 'Ink Lance', 'Long ink bolts mark targets. Summon an ink familiar to maintain pressure.'),
+'dream': ('S', 'Lullaby', 'Every third close-range pulse sleeps foes; the next hit wakes them for bonus damage.'),
+'puppet': ('S', 'Marionette Wire', 'Piercing threads bind enemies, making bound targets share direct damage.'),
+'ash': ('A', 'Cinder Scatter', 'Three burning projectiles. Dash away while leaving damaging fire behind.'),
+'lance': ('B', 'Starlance', 'Narrow long thrusts deal more damage at range. Charge through foes to reposition.'),
+'smith': ('B', 'Forge Hammer', 'Slow heavy circles stagger foes. The special empowers your next three strikes.'),
+'echo': ('A', 'Echo Blade', 'Fast close slashes strengthen with consecutive hits. Dash and leave a delayed echo.'),
+'debt': ('S', 'Blood Receipt', 'Drain health from marked foes. Sacrifice health to mark an entire group.'),
+'lantern': ('B', 'Lantern Pulse', 'Close light pulses slow foes and replenish mana. Place a healing sanctuary.'),
+'gravity': ('SS', 'Falling Star', 'A delayed area strike stuns foes. Predict movement to land the impact.'),
+'paradox': ('SSS', 'Contradiction', 'Alternate freezing and burning bolts. Your special alternates control and burst.'),
+'anatomy': ('A', 'Surgical Cut', 'Precise close cuts expose foes; repeated hits increase your damage.'),
+'familiar': ('S', 'Spirit Peck', 'Command a distant spirit strike. Your special calls a protective familiar flock.')
+}
+classes = [dict(c, rarity=ROSTER[c['id']][0], basic_name=ROSTER[c['id']][1], gameplay=ROSTER[c['id']][2]) for c in classes if c['id'] in ROSTER]
+
+# Live descriptions match the implemented mechanics; each calling has its own accent.
+COLORS = ['#e8c577','#cc8da3','#8edbd5','#afbeda','#d9ac87','#b4c4e8','#e2ae77','#9ac98d','#caadce','#8ce0ce','#b8d5d1','#adc9e7','#d8ace1','#c7b2e7','#dba5cd','#c6b5e9','#efae7e','#efd79d','#b3badf','#bad7a3']
+DESCRIPTIONS = {
+'debt': ('Marked foes return 3 health per hit and 5 health on defeat.', 'Spend 12 health to mark nearby foes for nine seconds and strike each for 48 base damage.'),
+'smith': ('Each third basic attack restores 4 mana.', 'Temper your next three hammer strikes into expanding shockwaves.'),
+'memory': ('Each collected memory grants 3 maximum mana while equipped.', 'Strike ahead for 29 base damage; a recorded echo repeats for 42 after 0.9 seconds. Nearby enemies become vulnerable to the next repeat.'),
+'anatomy': ('Each direct hit against the same foe builds 4% damage, up to 40%.', 'Expose the nearest foe for nine seconds, then make a precise 40-damage strike.'),
+'door': ('Gate travel restores 15 stamina.', 'Open a linked pair of gates and blink up to 260 units, cutting and exposing foes along the seam.'),
+'familiar': ('Your summoned flock maintains at least 10 shield while active.', 'Call three orbiting familiars for ten seconds. They strike nearby targets together every half second.'),
+'lantern': ('Survive one lethal hit per lantern rest at 1 health, with three seconds of invulnerability.', 'Place a sanctuary for nine seconds: pulses heal you and damage and slow nearby enemies.'),
+'paradox': ('Alternating a basic attack and a paid spell grants 15% direct damage.', 'Alternate a three-second freeze and a 75-damage detonation. Both casts slow nearby enemies.')
+}
+for index,c in enumerate(classes):
+    c['color'] = COLORS[index]
+    if c['id'] in DESCRIPTIONS:
+        c['passive_description'],c['description'] = DESCRIPTIONS[c['id']]
+
 for filename,content in [('classes.json',classes),('ritual.json',questions),('regions.json',regions)]:
     (OUT/filename).write_text(json.dumps(content,indent=2,ensure_ascii=False),encoding='utf-8')
 print(f'Authored {len(classes)} classes, {len(questions)} dilemmas, {len(regions)} regions.')

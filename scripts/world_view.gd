@@ -12,6 +12,7 @@ var serif: Font
 var preview = true
 var chunks: Dictionary = {}
 var static_items: Array = []
+var water_points: Array[Vector2] = []
 var foliage_motion = true
 var pixel_scale = 2.0
 
@@ -21,11 +22,15 @@ func _ready() -> void:
 	serif = load("res://assets/fonts/display.tres")
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	scale = Vector2.ONE*pixel_scale
-	modulate = Color(.82,.9,.97)
+	modulate = Color.WHITE
 
 func prepare_ground() -> void:
 	chunks.clear()
 	static_items.clear()
+	water_points.clear()
+	for y in game.zone.tiles.size():
+		for x in game.zone.tiles[y].size():
+			if game.zone.tiles[y][x] == 2 and (x+y)%3 == 0: water_points.append(Vector2(x*32+8,y*32+14))
 	for prop in game.zone.props:
 		static_items.append({"kind":"prop","position":prop.position,"source":prop})
 	static_items.sort_custom(func(a,b): return a.position.y < b.position.y)
@@ -40,14 +45,16 @@ func _chunk_image(cell: Vector2i) -> Texture2D:
 			var y = cell.y*CHUNK+yy
 			if x >= width or y >= height: continue
 			var tile: int = game.zone.tiles[y][x]
-			var variant = absi(x*173+y*739+game.world_seed)%4
+			var variant = (x*3+y*7)%4
+			if tile == 4: variant = 0 if y == 0 or int(game.zone.tiles[y-1][x]) != 4 else 1
 			image.blit_rect(art.tile_images[tile*4+variant],Rect2i(0,0,32,32),Vector2i(xx*32,yy*32))
 	return ImageTexture.create_from_image(image)
 
 func _process(delta: float) -> void:
 	if game == null or (not game.playing and not preview) or game.zone.is_empty(): return
 	clock += delta
-	var target: Vector2 = game.player_pos if game.playing else Vector2(1080+sin(clock*.045)*110,850+cos(clock*.04)*70)
+	modulate = Color(.78,.82,1) if game.room_id == 3 and game.playing and not game.changed.has("seal_resolved") else Color.WHITE
+	var target: Vector2 = game.player_pos if game.playing else Vector2(670+sin(clock*.045)*45,485+cos(clock*.04)*25)
 	var screen = get_viewport_rect().size/pixel_scale
 	var bounds: Vector2 = game.zone.size
 	target.x = clampf(target.x,screen.x*.5,bounds.x-screen.x*.5)
@@ -62,11 +69,17 @@ func _draw() -> void:
 	if not game.playing and not preview: return
 	terrain()
 	if game.room_id == 3 and game.playing:
-		draw_circle(Vector2(1536,660),310,Color(.25,.29,.26,.14))
-		for radius in [130,240,300]: draw_arc(Vector2(1536,660),radius,0,TAU,64,Color("a39665"),1)
+		var arena = Vector2(496,400)
+		draw_circle(arena,170,Color(.25,.29,.26,.08))
+		for radius in [82,144,170]: draw_arc(arena,radius,0,TAU,64,Color("a39665"),1)
 		for i in 12:
 			var a = i*TAU/12
-			draw_line(Vector2(1536,660)+Vector2.from_angle(a)*240,Vector2(1536,660)+Vector2.from_angle(a)*300,Color("a39665"),1)
+			draw_line(arena+Vector2.from_angle(a)*144,arena+Vector2.from_angle(a)*170,Color("a39665"),1)
+	for hazard in game.combat.hazards:
+		var tint = Color("d3a178") if hazard.kind == "root" else Color("93cfe8")
+		draw_circle(hazard.position,hazard.radius,Color(tint,.13))
+		draw_arc(hazard.position,hazard.radius,0,TAU,32,tint,1)
+		draw_arc(hazard.position,hazard.radius*.8,-PI*.5,-PI*.5+TAU*(1-hazard.time/hazard.duration),32,tint,2)
 	for effect in game.combat.effects:
 		if game.playing and effect.get("zone",false): draw_effect(effect)
 	var items: Array = []
@@ -79,16 +92,32 @@ func _draw() -> void:
 		for enemy in game.combat.enemies:
 			if enemy.hp > 0 and view_rect.has_point(enemy.position): items.append({"kind":"enemy","position":enemy.position,"source":enemy})
 		items.append({"kind":"player","position":game.player_pos})
+		if game.companions != null and game.companions.active() >= 0:
+			items.append({"kind":"pet","position":game.companions.position})
 	items.sort_custom(func(a,b): return a.position.y < b.position.y)
 	for item in items:
 		match item.kind:
 			"prop":
 				var tint = Color.WHITE
+				var cover_width = 64 if item.source.sprite in [2,7] else 32
+				var cover_height = 168 if item.source.sprite == 2 else (137 if item.source.sprite == 7 else 84)
+				if item.source.sprite in [24,25,26]:
+					cover_width = 110 if item.source.sprite == 26 else 75
+					cover_height = 168 if item.source.sprite == 26 else 136
 				# Trees and roofs fade only when they actually cover the hero.
-				if game.playing and item.source.sprite < 8 and absf(item.position.x-game.player_pos.x) < 48 and game.player_pos.y < item.position.y and game.player_pos.y > item.position.y-150: tint.a = .48
-				draw_ellipse_shadow(item.position+Vector2(8,1),Vector2(31,11),.18)
+				if game.playing and (item.source.sprite < 8 or item.source.sprite in [24,25,26]) and absf(item.position.x-game.player_pos.x) < cover_width and game.player_pos.y < item.position.y and game.player_pos.y > item.position.y-cover_height: tint.a = .48
+				if item.source.sprite != 13:
+					var shadow_size = Vector2(46,7) if item.source.sprite == 7 else (Vector2(20,7) if item.source.sprite < 6 else Vector2(12,4))
+					if item.source.sprite in [24,25,26]: shadow_size = Vector2(80 if item.source.sprite == 26 else 57,8)
+					draw_ellipse_shadow(item.position+Vector2(4,1),shadow_size,.15)
 				prop_sprite(item.source.sprite,item.position,item.source.scale,tint)
+				if item.source.sprite == 11:
+					for radius in [10,16,24]: draw_circle(item.position+Vector2(15,-29),radius,Color(1,.78,.42,.025))
 			"player": draw_actor(item.position,Color.WHITE,game.animation,game.facing,game.animation_time)
+			"pet":
+				draw_ellipse_shadow(item.position,Vector2(10,3),.2)
+				art.enemy(self,game.companions.active(),item.position,clock,Color("b8ffe4"),false)
+				draw_string(font,item.position+Vector2(-12,-34),"ALLY",HORIZONTAL_ALIGNMENT_LEFT,-1,8,Color("b8ffe4"))
 			"enemy": draw_enemy(item.source)
 			"object": draw_object(item.source)
 	if game.playing:
@@ -96,8 +125,7 @@ func _draw() -> void:
 			if not effect.get("zone",false): draw_effect(effect)
 		for point in game.combat.prisms: draw_prism(point,Color("c9b3ec"))
 		for projectile in game.combat.projectiles:
-			draw_circle(projectile.position,5,projectile.color)
-			draw_line(projectile.position,projectile.position-projectile.direction*16,Color(projectile.color,.5),2)
+			draw_projectile(projectile)
 		if game.combat.familiar_time > 0:
 			for i in game.combat.familiar_count:
 				var p: Vector2 = game.player_pos+Vector2.from_angle(clock*2+i*TAU/game.combat.familiar_count)*45
@@ -128,10 +156,10 @@ func terrain() -> void:
 		if not active.has(cell): chunks.erase(cell)
 	# Discrete ripples are cheap and preserve the original pixel-art water.
 	if game.settings.flashes:
-		for i in 18:
-			var p = Vector2(1840+(i%4)*17,120+i*68)
-			if game.room_id == 0 and view_rect.has_point(p):
-				draw_line(p,p+Vector2(6+sin(clock*2+i)*3,0),Color(.6,.85,.8,.35),1)
+		for point in water_points:
+			if view_rect.has_point(point):
+				var p = point+Vector2(int(sin(clock*1.5+point.y)*2),0)
+				draw_line(p,p+Vector2(7,0),Color(.7,.91,.87,.5),1)
 
 func prop_sprite(index: int, point: Vector2, amount: float = 1.0, tint: Color = Color.WHITE) -> void:
 	art.prop(self,index,point,amount,tint)
@@ -139,14 +167,14 @@ func prop_sprite(index: int, point: Vector2, amount: float = 1.0, tint: Color = 
 func draw_actor(point: Vector2, tint: Color, animation: String = "idle", facing: Vector2 = Vector2.DOWN, remaining: float = 0) -> void:
 	draw_ellipse_shadow(point,Vector2(12,4),.25)
 	if game.playing and point == game.player_pos and game.invulnerable > 0 and game.invulnerable < 5: tint.a = .65
-	art.actor(self,point,tint,animation,facing,clock,remaining)
+	art.actor(self,point,tint,animation,facing,clock,remaining,"","star" if game.armor == "plate" else ("hybrid" if game.armor == "leather" else "circle"))
 
 func draw_object(object: Dictionary) -> void:
 	var p: Vector2 = object.position
 	if object.kind == "npc":
 		var tint = Color("e7e2f4") if object.id == "mira" else (Color("efddbd") if object.id == "orin" else Color("d4e1bb"))
 		draw_ellipse_shadow(p,Vector2(12,4),.2)
-		art.actor(self,p,tint,"idle",Vector2.DOWN,clock,0,object.id)
+		art.actor(self,p,tint,"run" if object.get("moving",false) else "idle",object.get("facing",Vector2.DOWN),clock,0,object.id)
 		if object.id == "mira" and game.quest_stage < 2: draw_string(serif,p+Vector2(-3,-62),"!",HORIZONTAL_ALIGNMENT_LEFT,-1,20,Color("e7c580"))
 	elif object.kind == "exit":
 		if object.sprite >= 0: prop_sprite(object.sprite,p)
@@ -166,17 +194,53 @@ func draw_object(object: Dictionary) -> void:
 
 func draw_enemy(enemy: Dictionary) -> void:
 	var point: Vector2 = enemy.position
-	if enemy.windup > 0:
-		var radius = 150 if enemy.boss else 65
+	if enemy.windup > 0 and not enemy.boss:
+		var radius: float = enemy.attack_radius
 		draw_circle(enemy.attack_target,radius,Color(.8,.3,.25,.13))
 		draw_arc(enemy.attack_target,radius,0,TAU,40,Color(.9,.5,.4,.75),1)
-	art.enemy(self,enemy.type,point,clock,Color(1.4,1.4,1.4) if enemy.flash > 0 else Color.WHITE,enemy.boss)
+	art.enemy(self,enemy.type,point,clock,Color(1.4,1.4,1.4) if enemy.flash > 0 else Color.WHITE,enemy.boss,enemy.windup)
 	var width = 90 if enemy.boss else 28
-	var y = -110 if enemy.boss else -40
+	var y = -76 if enemy.boss else -34
 	draw_rect(Rect2(point+Vector2(-width/2.0,y),Vector2(width,2)),Color("172b2a"))
 	draw_rect(Rect2(point+Vector2(-width/2.0,y),Vector2(width*maxf(0,enemy.hp/enemy.max_hp),2)),Color("d89b84"))
-	if enemy.boss: draw_string(serif,point+Vector2(-70,y-7),"The Unremembered Keeper",HORIZONTAL_ALIGNMENT_LEFT,-1,16,Color("e5d5b3"))
+	if enemy.boss:
+		var title: String = enemy.get("name","The Unremembered Keeper")
+		var title_width = serif.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,16).x
+		draw_rect(Rect2(point+Vector2(-title_width*.5-5,y-25),Vector2(title_width+10,21)),Color("20253a"))
+		draw_string(serif,point+Vector2(-title_width*.5,y-9),title,HORIZONTAL_ALIGNMENT_LEFT,-1,16,Color("e5d5b3"))
+	var statuses: Array[String] = []
+	for status in ["poison","burn","weak","slow","bound","mark","repeat"]:
+		if enemy[status] > 0: statuses.append(status.to_upper())
+	if not statuses.is_empty():
+		var caption = " / ".join(statuses)
+		draw_string(font,point+Vector2(-30,14),caption,HORIZONTAL_ALIGNMENT_LEFT,-1,8,Color("20253a"))
 	if enemy.stun > 0 or enemy.sleep > 0: draw_arc(point-Vector2(0,42),9,clock*3,clock*3+4,16,Color("d7c8eb"),1)
+
+func draw_projectile(projectile: Dictionary) -> void:
+	var p: Vector2 = projectile.position.round()
+	var c: Color = projectile.color
+	var kind: String = projectile.get("kind", "circle")
+	draw_line(p,p-projectile.direction*18,Color(c,.4),2)
+	match kind:
+		"luck":
+			draw_rect(Rect2(p-Vector2(5,5),Vector2(10,10)),Color("30364f"))
+			draw_rect(Rect2(p-Vector2(4,4),Vector2(8,8)),c)
+			for offset in [Vector2(-2,-2),Vector2(2,2),Vector2(-2,2)]: draw_rect(Rect2(p+offset,Vector2(2,2)),Color("30364f"))
+		"glass", "thorn":
+			var diamond = PackedVector2Array([p+Vector2(0,-8),p+Vector2(4,0),p+Vector2(0,8),p+Vector2(-4,0)])
+			draw_colored_polygon(diamond,c)
+			draw_line(p-Vector2(0,6),p+Vector2(0,6),Color("f4e5c2"),1)
+		"ash", "paradox":
+			if projectile.get("status", "") == "slow": c = Color("a9d8ef")
+			var flame = PackedVector2Array([p+Vector2(-4,3),p+Vector2(-3,-3),p+Vector2(0,-8),p+Vector2(2,-2),p+Vector2(5,-4),p+Vector2(4,4),p+Vector2(0,6)])
+			draw_colored_polygon(flame,c)
+			draw_rect(Rect2(p-Vector2(1,1),Vector2(3,5)),Color("fff0bf"))
+		"ink":
+			draw_rect(Rect2(p-Vector2(3,5),Vector2(6,10)),c)
+			draw_line(p+Vector2(-2,-4),p+Vector2(2,3),Color("f0d4ed"),1)
+		_:
+			draw_rect(Rect2(p-Vector2(3,3),Vector2(6,6)),c)
+			draw_rect(Rect2(p-Vector2(1,1),Vector2(2,2)),Color("fff0cf"))
 
 func draw_effect(effect: Dictionary) -> void:
 	var progress = 1-effect.time/effect.duration
@@ -185,6 +249,13 @@ func draw_effect(effect: Dictionary) -> void:
 	var c: Color = effect.color
 	c.a = minf(1,effect.time*3)*.8
 	match effect.kind:
+		"impact", "defeat":
+			var count = 8 if effect.kind == "defeat" else 4
+			for i in count:
+				var q = (p+Vector2.from_angle(i*TAU/count)*r*progress*.65).round()
+				draw_rect(Rect2(q,Vector2.ONE*(3 if effect.kind == "defeat" else 2)),c)
+		"ring", "rune":
+			draw_arc(p,r*(.4+progress*.6),0,TAU,32,Color(c,.5 if effect.kind == "rune" else .85),1)
 		"slash":
 			var direction: Vector2 = effect.origin
 			var angle = direction.angle() if direction != Vector2.ZERO else -PI*.5
@@ -195,9 +266,38 @@ func draw_effect(effect: Dictionary) -> void:
 		"decoy","echo":
 			draw_actor(p,Color(c,.45))
 		"glass":
-			for i in 12:
-				var shard = p+Vector2.from_angle(i*TAU/12)*r*progress
+			for i in 6:
+				var shard = p+Vector2.from_angle(i*TAU/6)*r*progress
 				draw_prism(shard,Color(c,1-progress))
+		"portal":
+			var shape = PackedVector2Array()
+			var inner = PackedVector2Array()
+			for i in 49:
+				var angle = i*TAU/48
+				shape.append((p+Vector2(cos(angle)*r*.36,sin(angle)*r*.68)-Vector2(0,22)).round())
+				inner.append((p+Vector2(cos(angle)*r*.29,sin(angle)*r*.6)-Vector2(0,22)).round())
+			draw_colored_polygon(shape,Color(c,.1))
+			draw_polyline(shape,c,2)
+			draw_polyline(inner,Color(c,.5),1)
+			for i in 8:
+				var angle = i*TAU/8+clock*.5
+				draw_rect(Rect2((p+Vector2(cos(angle)*r*.42,sin(angle)*r*.73)-Vector2(0,22)).round(),Vector2(2,2)),c)
+		"star":
+			var points = PackedVector2Array()
+			for i in 11:
+				var angle = i*TAU/10-PI/2+progress*.3
+				points.append((p+Vector2.from_angle(angle)*r*(.43 if i%2 else .86)).round())
+			draw_polyline(points,c,2)
+			for i in game.rank:
+				var q = p+Vector2((i-(game.rank-1)*.5)*15,-r*.9)
+				draw_line(q-Vector2(0,4),q+Vector2(0,4),c,1)
+				draw_line(q-Vector2(4,0),q+Vector2(4,0),c,1)
+		"circle":
+			var rr = r*minf(1,progress*5)
+			for i in game.rank: draw_arc(p,rr*(1-i*.18),0,TAU,64,Color(c,1-i*.16),1 if i else 2)
+			for i in 3:
+				var angle = i*TAU/3+clock*.3
+				draw_line(p+Vector2.from_angle(angle)*rr*.8,p+Vector2.from_angle(angle+TAU/3)*rr*.8,Color(c,.5),1)
 		"dice":
 			draw_arc(p,r*progress,0,TAU,48,c,3)
 			var box = Rect2(p-Vector2(18,60+progress*20),Vector2(36,36))

@@ -5,6 +5,7 @@ var ambience: AudioStreamPlayer
 var interval = 0.0
 var step = 0
 var voices: Array = []
+var tone_cache: Dictionary = {}
 const SCALE = [130.81,196.0,261.63,293.66,329.63,392.0,523.25,392.0]
 
 func _ready() -> void:
@@ -30,6 +31,11 @@ func note(frequency: float, duration: float = .2, volume: float = .1) -> void:
 		if not available.playing:
 			voice = available
 			break
+	var key = "%s:%s:%s" % [frequency,duration,volume]
+	if tone_cache.has(key):
+		voice.stream = tone_cache[key]
+		voice.play()
+		return
 	var stream = AudioStreamWAV.new()
 	stream.format = AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate = 22050
@@ -42,5 +48,6 @@ func note(frequency: float, duration: float = .2, volume: float = .1) -> void:
 		var wave = sin(TAU*frequency*t)*.7+sin(TAU*frequency*2*t)*.2+sin(TAU*frequency*.5*t)*.1
 		bytes.encode_s16(i*2,int(wave*envelope*volume*32760))
 	stream.data = bytes
+	tone_cache[key] = stream
 	voice.stream = stream
 	voice.play()

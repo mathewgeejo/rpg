@@ -1,4 +1,4 @@
-"""Verify all project raster artwork against the reviewed human-art manifest."""
+"""Verify original pixel designs and credited artist assets against the reviewed manifest."""
 import hashlib
 import json
 from pathlib import Path
@@ -21,4 +21,5 @@ for relative in approved:
         problems.append(f'Missing source artwork: {relative}')
 if problems:
     raise SystemExit('\n'.join(problems))
-print(f'PASS: {len(approved)} human-authored source images verified; no unapproved raster assets.')
+originals = sum(entry['path'].startswith('assets/custom/') for entry in manifest['images'])
+print(f'PASS: {originals} original pixel assets and {len(approved)-originals} credited artist-source images verified; no unapproved raster assets.')

@@ -1,0 +1,492 @@
+{
+  "id": 3,
+  "name": "The Unremembered Observatory",
+  "subtitle": "LANTERN VALE \u00b7 THE MEMORY UNDER THE STARS",
+  "width": 30,
+  "height": 26,
+  "spawn": [
+    15,
+    22
+  ],
+  "finish": [
+    15,
+    3
+  ],
+  "terrain": [
+    "##############################",
+    "##############################",
+    "##..........................##",
+    "##..........................##",
+    "##............:::...........##",
+    "##............^^^...........##",
+    "##.....=======^^^======.....##",
+    "##.....=======^^^======.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....================.....##",
+    "##.....=======^^^======.....##",
+    "##.....vvvvvvv^^^vvvvvv.....##",
+    "##............^^^...........##",
+    "##............:::...........##",
+    "##............:::...........##",
+    "##............:::...........##",
+    "##############:::#############",
+    "##############################"
+  ],
+  "props": [
+    {
+      "sprite": 26,
+      "position": [
+        15,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 16,
+      "position": [
+        7,
+        7
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 16,
+      "position": [
+        22,
+        7
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 16,
+      "position": [
+        7,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 16,
+      "position": [
+        22,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        5,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        5,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        2,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        2,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        4,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        4,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        6,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        6,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        8,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        8,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        10,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        10,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        12,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        12,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        14,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        14,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        16,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        16,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        18,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        18,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        20,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        20,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        22,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        22,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        26,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        26,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        5
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        5
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        11
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        11
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        14
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        14
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        28,
+        20
+      ],
+      "scale": 1
+    }
+  ],
+  "objects": [
+    {
+      "id": "star_lore",
+      "kind": "lore",
+      "name": "Read the astronomer's oath",
+      "position": [
+        11,
+        19
+      ],
+      "sprite": 6,
+      "pages": [
+        "A circle is a promise made to the self. A star is a promise carried for another. The Keeper was built to hold both, and given no way to refuse.",
+        "It marks your last position with a falling star. At half health, four satellite marks follow. Leave space between yourself and the Keeper."
+      ]
+    },
+    {
+      "id": "back_3",
+      "kind": "exit",
+      "name": "Back to Stonewater",
+      "position": [
+        15,
+        23
+      ],
+      "sprite": -1,
+      "to": 2
+    },
+    {
+      "id": "rest_3",
+      "kind": "rest",
+      "name": "The last small light",
+      "position": [
+        18,
+        22
+      ],
+      "sprite": 11
+    },
+    {
+      "id": "seal",
+      "kind": "seal",
+      "name": "The Observatory Seal",
+      "position": [
+        15,
+        7
+      ],
+      "sprite": 16
+    },
+    {
+      "id": "home",
+      "kind": "exit",
+      "name": "Follow the lanterns home",
+      "position": [
+        15,
+        3
+      ],
+      "sprite": 10,
+      "to": 0
+    }
+  ],
+  "enemies": [
+    {
+      "id": "the_keeper",
+      "position": [
+        15,
+        12
+      ],
+      "type": 5,
+      "boss": true,
+      "hp": 1800.0,
+      "max_hp": 1800.0
+    }
+  ]
+}

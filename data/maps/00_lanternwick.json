@@ -1,0 +1,915 @@
+{
+  "id": 0,
+  "name": "Lanternwick",
+  "subtitle": "LANTERN VALE \u00b7 A TOWN THAT KNOWS YOUR NAME",
+  "width": 40,
+  "height": 30,
+  "spawn": [
+    20,
+    21
+  ],
+  "finish": [
+    20,
+    27
+  ],
+  "terrain": [
+    "########################################",
+    "########################################",
+    "##................................~~~.##",
+    "##................................~~~.##",
+    "##................................~~~.##",
+    "##.......................=======..~~~.##",
+    "##.......................=======..~~~.##",
+    "##.......................=======..~~~.##",
+    "##.......................=======..~~~.##",
+    "##.......................=======..~~~.##",
+    "##.......................==^^===..~~~.##",
+    "##.................:::...vv^^vvv..~~~.##",
+    "##.................:::...vv^^vvv..~~~.##",
+    "##.................:::.....^^.....~~~.##",
+    "##.......:::::::::::::::::::::::::~~~.##",
+    "##.......::::::::::::::::::::::::+++++##",
+    "##.......::::::::::::::::::::::::+++++##",
+    "##..............::::::::::.......+++++##",
+    "##..............:ppppppp::........~~~.##",
+    "##..............:ppppppp::........~~~.##",
+    "##.........::::::ppppppp::::::....~~~.##",
+    "##.........::::::ppppppp::::::....~~~.##",
+    "##..............::::::::::........~~~.##",
+    "##.................:::............~~~.##",
+    "##.................:::............~~~.##",
+    "##.................:::............~~~.##",
+    "##.................:::............~~~.##",
+    "##.................:::............~~~.##",
+    "###################:::##################",
+    "########################################"
+  ],
+  "props": [
+    {
+      "sprite": 7,
+      "position": [
+        10,
+        13
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 7,
+      "position": [
+        30,
+        13
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 7,
+      "position": [
+        11,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 7,
+      "position": [
+        29,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 8,
+      "position": [
+        23,
+        16
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 2,
+      "position": [
+        20,
+        10
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        7,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        15,
+        10
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        25,
+        16
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        31,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        14,
+        25
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        31,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        5,
+        9
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        6,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 16,
+      "position": [
+        28,
+        5
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 11,
+      "position": [
+        14,
+        15
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 11,
+      "position": [
+        25,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 11,
+      "position": [
+        32,
+        15
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 11,
+      "position": [
+        17,
+        24
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        7,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        8,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        9,
+        19
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        7,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        8,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        9,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        30,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        31,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        30,
+        22
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 13,
+      "position": [
+        31,
+        22
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        6,
+        18
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        7,
+        18
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        6,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        7,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        8,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        9,
+        21
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        30,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 20,
+      "position": [
+        31,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 21,
+      "position": [
+        17,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 21,
+      "position": [
+        24,
+        22
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 22,
+      "position": [
+        9,
+        18
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        2,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        2,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        4,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        4,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        6,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        6,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        8,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        8,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        10,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        10,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        12,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        12,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        14,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        14,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        16,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        16,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        18,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        18,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        20,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        20,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        22,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        22,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        24,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        26,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        26,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        28,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        28,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        30,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        30,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        32,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        32,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        34,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        34,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        36,
+        2
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        36,
+        28
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        5
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        5
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        8
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        11
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        11
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        14
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        14
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        17
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        20
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        23
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 1,
+      "position": [
+        2,
+        26
+      ],
+      "scale": 1
+    },
+    {
+      "sprite": 0,
+      "position": [
+        38,
+        26
+      ],
+      "scale": 1
+    }
+  ],
+  "objects": [
+    {
+      "id": "mira",
+      "kind": "npc",
+      "name": "Mira \u00b7 Cartographer",
+      "position": [
+        20,
+        14
+      ],
+      "sprite": -1
+    },
+    {
+      "id": "orin",
+      "kind": "npc",
+      "name": "Orin \u00b7 Lantern keeper",
+      "position": [
+        12,
+        15
+      ],
+      "sprite": -1,
+      "path": [
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          12,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "sella",
+      "kind": "npc",
+      "name": "Sella \u00b7 Gardener",
+      "position": [
+        27,
+        21
+      ],
+      "sprite": -1,
+      "path": [
+        [
+          27,
+          21
+        ],
+        [
+          29,
+          21
+        ],
+        [
+          29,
+          22
+        ],
+        [
+          27,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "lantern",
+      "kind": "rest",
+      "name": "The village lantern",
+      "position": [
+        23,
+        21
+      ],
+      "sprite": 11
+    },
+    {
+      "id": "exit_1",
+      "kind": "exit",
+      "name": "To Wispwood Path",
+      "position": [
+        20,
+        27
+      ],
+      "sprite": -1,
+      "to": 1
+    },
+    {
+      "id": "ritual",
+      "kind": "ritual",
+      "name": "The Remembering Stone",
+      "position": [
+        28,
+        9
+      ],
+      "sprite": 6
+    },
+    {
+      "id": "board",
+      "kind": "board",
+      "name": "Wayfarer's board",
+      "position": [
+        24,
+        18
+      ],
+      "sprite": 14
+    },
+    {
+      "id": "fish_0",
+      "kind": "fishing",
+      "name": "Fish the quiet river",
+      "position": [
+        33,
+        20
+      ],
+      "sprite": 14
+    },
+    {
+      "id": "shop",
+      "kind": "shop",
+      "name": "The little provisions stall",
+      "position": [
+        9,
+        19
+      ],
+      "sprite": -1
+    }
+  ],
+  "enemies": []
+}
